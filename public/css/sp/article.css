@@ -1,0 +1,400 @@
+.art__wrap section {
+  margin-bottom: 18.6666666667vw;
+}
+.art__wrap section h2 {
+  font-size: 3.7333333333vw;
+  font-weight: 500;
+  margin-bottom: 1em;
+}
+.art__wrap section h2.narrow {
+  margin-bottom: -9.3333333333vw;
+}
+.art__wrap section h2.xnarrow {
+  margin-bottom: -13.3333333333vw;
+}
+.art__wrap section h3 {
+  font-size: 3.2vw;
+  font-weight: 500;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+}
+.art__wrap section hr {
+  height: 0;
+  margin-top: 8vw;
+  margin-bottom: 8vw;
+  border-top: 1px solid #E6E6E6;
+}
+.art__wrap section .credit {
+  margin: 2em 0;
+  padding-right: 1.2em;
+  font-size: 2.6666666667vw;
+  text-align: right;
+  border-right: 1px solid #E6E6E6;
+}
+.art__wrap section.delighter {
+  transition: all .3s ease-out;
+  transform: translate(0, 45px);
+  opacity: 0;
+}
+.art__wrap section.delighter.started {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.art__wrap section p.narrow {
+  margin-bottom: -9.3333333333vw;
+}
+.art__layout p {
+  margin-bottom: .5em;
+}
+.art__layout--type01 .photo {
+  margin-bottom: 5.3333333333vw;
+}
+.art__layout--type01 .text-wrap {
+  width: auto;
+  margin-right: 5.3333333333%;
+  margin-left: 5.3333333333%;
+}
+.art__layout--type02 .text-wrap {
+  width: auto;
+  margin-right: 5.3333333333%;
+  margin-left: 5.3333333333%;
+}
+.art__layout--type03 {
+  width: auto;
+  margin-right: 5.3333333333%;
+  margin-left: 5.3333333333%;
+}
+.art__layout--type03 .photo + .text-wrap {
+  margin-top: 5.3333333333vw;
+}
+.art__layout--type04 {
+  width: auto;
+  margin-right: 5.3333333333%;
+  margin-left: 5.3333333333%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.art__layout--type04 .photo {
+  width: 47.7611940299%;
+}
+.art__layout--type04 .text-wrap {
+  width: 47.7611940299%;
+  order: -1;
+}
+.art__layout--type05 {
+  width: auto;
+  margin-right: 5.3333333333%;
+  margin-left: 5.3333333333%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.art__layout--type05 .photo {
+  width: 47.7611940299%;
+  order: -1;
+}
+.art__layout--type05 .text-wrap {
+  width: 47.7611940299%;
+}
+.art__layout--type06 {
+  width: auto;
+  margin-right: 5.3333333333%;
+  margin-left: 5.3333333333%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.art__layout--type06 .photo {
+  width: 100%;
+  order: -1;
+}
+.art__layout--type06 .text-wrap {
+  width: 100%;
+  margin-top: 2.6666666667vw;
+}
+.art__layout--type07 {
+  width: auto;
+  margin-right: 5.3333333333%;
+  margin-left: 5.3333333333%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.art__layout--type07 .photo {
+  width: 100%;
+  margin-bottom: 2.6666666667vw;
+  order: -1;
+}
+.art__layout--type07 .text-wrap {
+  width: 100%;
+}
+.art__layout--type08 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: auto;
+  margin-right: 5.3333333333%;
+  margin-left: 5.3333333333%;
+}
+.art__layout--type08 .col01 {
+  width: 100%;
+  margin-bottom: 2.6666666667vw;
+}
+.art__layout--type08 .col02 {
+  width: 100%;
+}
+.art__layout--type08 .col02 .photo {
+  margin-bottom: 2.6666666667vw;
+}
+.art__layout--type09 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: auto;
+  margin-right: 5.3333333333%;
+  margin-left: 5.3333333333%;
+}
+.art__layout--type09 .col01 {
+  width: 100%;
+  margin-bottom: 2.6666666667vw;
+}
+.art__layout--type09 .col02 {
+  width: 100%;
+}
+.art__layout--type09 .col02 .photo {
+  margin-bottom: 2.6666666667vw;
+}
+.art__title-wrap .visual {
+  margin-bottom: 4vw;
+}
+.art__title-wrap--inner {
+  width: auto;
+  margin-right: 5.3333333333%;
+  margin-left: 5.3333333333%;
+}
+.art__title-wrap h1 {
+  font-size: 4.8vw;
+  font-weight: 500;
+  margin-bottom: 1em;
+}
+.art__title-wrap .date {
+  color: #696969;
+  margin-bottom: .5em;
+}
+.art__title-wrap .lead {
+  margin: 2em 0 1em 0;
+  font-size: 3.2vw;
+  line-height: 1.8;
+}
+.art__tag-list {
+  margin: 0 0 1em 0;
+}
+.art__tag-list li {
+  display: inline-block;
+  border-radius: 3px;
+  font-size: 2.6666666667vw;
+}
+.art__tag-list li a {
+  display: block;
+  padding: .4em .7em;
+}
+.art__item-list {
+  width: auto;
+  margin-right: 5.3333333333%;
+  margin-left: 5.3333333333%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.art__item-list .item {
+  width: 47.7611940299%;
+  margin-right: 4.4776119403%;
+  margin-bottom: 5.3333333333vw;
+}
+.art__item-list .item:nth-of-type(2n) {
+  margin-right: 0;
+}
+.art__item-list .item .photo {
+  margin-bottom: 1.3333333333vw;
+}
+.art__item-list .item .info {
+  font-size: 2.9333333333vw;
+}
+.art__item-list .item .info .brand-name {
+  font-size: 2.4vw;
+}
+.art__item-list .item .info .item-price.sale {
+  color: #FF0000;
+}
+.art__item-list .item .info .item-price.sale .off {
+  margin-left: .5em;
+}
+.art__item-list .item .info .item-price .off {
+  color: #FF0000;
+  margin-left: .5em;
+}
+.art__item-list.col-three .item {
+  width: 31.9402985075%;
+  margin-right: 2.0895522388%;
+}
+.art__item-list.col-three .item:nth-of-type(3n) {
+  margin-right: 0;
+}
+.art__item-list.row .item {
+  width: 100%;
+  padding-bottom: 4vw;
+  border-bottom: 1px solid #E6E6E6;
+}
+.art__item-list.row .item a {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.art__item-list.row .photo {
+  width: 26.8656716418%;
+}
+.art__item-list.row .info {
+  width: 68.6567164179%;
+  align-items: center;
+}
+.art__item-list.row .info .brand-name {
+  font-size: 2.9333333333vw;
+}
+.art__item-list.row .info .item-name {
+  font-size: 3.2vw;
+}
+.art__item-list.row .info .item-price {
+  font-size: 3.2vw;
+}
+.art__insert-items ul {
+  border-top: 1px solid #E6E6E6;
+}
+.art__insert-items ul li {
+  padding: 1em 0;
+  border-bottom: 1px solid #E6E6E6;
+}
+.art__insert-items ul li a {
+  text-decoration: underline;
+}
+.art__insert-items ul li a .off {
+  color: #FF0000;
+  margin-left: .5em;
+  font-size: 80%;
+}
+.art__btn {
+  width: auto;
+  margin-right: 5.3333333333%;
+  margin-left: 5.3333333333%;
+  margin-top: 8vw;
+  margin-bottom: 16vw;
+}
+.art__btn a {
+  display: flex;
+  width: 100%;
+  border: 1px solid #696969;
+  align-items: center;
+  justify-content: center;
+  height: 13.3333333333vw;
+  color: #696969;
+}
+.art__styling {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.art__styling .item {
+  width: 49.2537313433%;
+  margin-bottom: 8vw;
+}
+.art__styling .item .styling-photo {
+  margin-bottom: 1.3333333333vw;
+}
+.art__styling .staff-info {
+  font-size: 2.9333333333vw;
+  text-align: center;
+}
+.art__styling .staff-info .staff-name {
+  font-weight: 500;
+  font-size: 3.2vw;
+}
+.art__styling.type02 {
+  width: auto;
+  margin-right: 5.3333333333%;
+  margin-left: 5.3333333333%;
+}
+.art__styling.type02 .item {
+  width: 100%;
+  margin-bottom: 13.3333333333vw;
+}
+.art__tag .content {
+  margin-bottom: 32vw;
+}
+.art__tag .content .styling-photo {
+  margin-bottom: 26.6666666667vw;
+}
+.art__tag .content .item-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.art__tag .content .item-wrap .item {
+  width: 49.2537313433%;
+  margin-bottom: 5.3333333333vw;
+}
+.art__tag .content .item-wrap .item .photo {
+  margin-bottom: 1.3333333333vw;
+}
+.art__tag .content .item-wrap .item .info {
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: 2.6666666667vw;
+}
+.art__tag .content .item-wrap .item .info .brand-name {
+  font-size: 2.4vw;
+}
+.art__tag .content .item-wrap .item .info .item-price.sale {
+  color: #FF0000;
+}
+.art__tag .content .item-wrap .item .info .item-price.sale .off {
+  margin-left: .5em;
+}
+.art__sns-share {
+  width: auto;
+  margin-right: 5.3333333333%;
+  margin-left: 5.3333333333%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8vw;
+  margin-bottom: 13.3333333333vw;
+}
+.art__sns-share .title {
+  font-size: 3.4666666667vw;
+  font-family: 'EB Garamond', serif;
+}
+.art__sns-share ul {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+.art__sns-share ul li {
+  width: 25px;
+  margin-left: 20px;
+}
+.art__sns-share ul li a {
+  display: block;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.art__sns-share ul .twitter {
+  margin-left: 0;
+}
+.art__sns-share ul .twitter a {
+  background-image: url("/common/sp/img/icon_twitter_black.svg");
+}
+.art__sns-share ul .facebook a {
+  background-image: url("/common/sp/img/icon_fb_black.svg");
+}
+.art__sns-share ul .line a {
+  background-image: url("/common/sp/img/icon_line_black.svg");
+}

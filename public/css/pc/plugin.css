@@ -1,0 +1,3720 @@
+@charset "UTF-8";
+/* ==========================================================
+Name:
+    plugin.css
+
+Description:
+    サイトで使用するjQuery等のプラグインのCSSを記述する
+    このCSSファイルにプラグインに付属するCSSを移設する
+    このファイルに記述されたスタイルは変更しない
+    スタイルの変更が必要な場合、他のCSSファイルにて上書きを行う
+
+Contents:
+    Slick
+    cri_liveact
+    magnific-popup
+========================================================== */
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.slick-list:focus {
+  outline: none;
+}
+
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+}
+
+.slick-track:before,
+.slick-track:after {
+  display: table;
+  content: '';
+}
+
+.slick-track:after {
+  clear: both;
+}
+
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  outline: none;
+}
+
+[dir='rtl'] .slick-slide {
+  float: right;
+}
+
+.slick-slide img {
+  display: block;
+}
+
+.slick-slide.slick-loading img {
+  display: none;
+}
+
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+  display: block;
+}
+
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
+/* Icons */
+@font-face {
+  font-family: 'slick';
+  font-weight: normal;
+  font-style: normal;
+}
+/* Arrows */
+.slick-prev,
+.slick-next {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  cursor: pointer;
+  color: transparent;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  color: transparent;
+  outline: none;
+  background: transparent;
+}
+
+.slick-prev:hover:before,
+.slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before {
+  opacity: 1;
+}
+
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+  opacity: .25;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-family: 'slick';
+  font-size: 20px;
+  line-height: 1;
+  opacity: .75;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev {
+  left: -25px;
+}
+
+[dir='rtl'] .slick-prev {
+  right: -25px;
+  left: auto;
+}
+
+.slick-prev:before {
+  content: '←';
+}
+
+[dir='rtl'] .slick-prev:before {
+  content: '→';
+}
+
+.slick-next {
+  right: -25px;
+}
+
+[dir='rtl'] .slick-next {
+  right: auto;
+  left: -25px;
+}
+
+.slick-next:before {
+  content: '→';
+}
+
+[dir='rtl'] .slick-next:before {
+  content: '←';
+}
+
+/* Dots */
+.slick-dotted.slick-slider {
+  margin-bottom: 30px;
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: -25px;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+
+.slick-dots li button:hover,
+.slick-dots li button:focus {
+  outline: none;
+}
+
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before {
+  opacity: 1;
+}
+
+.slick-dots li button:before {
+  font-family: 'slick';
+  font-size: 6px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: '•';
+  text-align: center;
+  opacity: .25;
+  color: black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: .75;
+  color: black;
+}
+
+/*
+ *
+ * LiveAct(R) PRO
+ * Runtime Library
+ *
+ * (c) 2016 CRI Middleware Co., Ltd.
+ * Version : 1.63.531.0
+ *
+ */
+/**
+ * コントロールUI
+ *
+ * Styleguide 1
+ */
+/**
+ * コントロールUI全体
+ *
+ * Styleguide 1.1
+ */
+/**
+ * .liveact-controls
+ *
+ * コントロールUIをまとめる要素を指すセレクタです。
+ * コントロールUIとは:
+ * - 再生ボタン
+ * - シークバー
+ * - プレーヤー中央の大きな再生ボタン
+ * - チャプター区切りUI
+ * - etc.
+ *
+ * ボタン類の大きさはfont-sizeで制御しています。
+ *
+ * 全称セレクタやdiv要素全体に対してfont-sizeを指定すると
+ * 表示が崩れることがあります。ご注意ください。
+ *
+ * Styleguide 1.1.1
+ */
+.liveact-controls {
+  /* fit to player */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  -webkit-align-items: center;
+  font-size: 36px;
+  line-height: 1;
+  /* fall-back */
+  box-sizing: border-box;
+  flex-direction: column;
+  /* ザブトン */
+  border-bottom: 1px solid black;
+  color: rgba(255, 255, 255, 0.8);
+  /* 後ろのcanvasにイベントを飛ばすためにザブトンのイベントは無効にする */
+  pointer-events: none;
+}
+
+/**
+ * .lac-div--mobile .liveact-controls
+ *
+ * モバイル環境においてボタンの大きさは、
+ * 画面の幅・高さのうち短い方の辺長に比例する仕様となっています。
+ * 画面幅320pxで36pxになります。
+ * (36px / 320px * 100vmin = 11.25vmin)
+ *
+ * これにより、下記マークアップが設定されていないページでも、
+ * ボタンが小さくなりすぎることなく、問題なく操作できます。
+ *
+ * <meta name="viewport" content="width=device-width" />
+ *
+ * Styleguide 1.1.2
+ */
+.lac-div--mobile .liveact-controls {
+  /* viewport-width: 320px -> 36px */
+  font-size: 11.25vmin;
+}
+
+/**
+ * .liveact-controls.liveact-controls--no-seekbar,
+ * .liveact-controls.liveact-controls--audio,
+ * .liveact-controls.liveact-controls--swipe
+ *
+ * シークバーとグレーの座布団がなく、
+ * プレーヤー右下にボタンが固まっているタイプの
+ * コントロールUIで使用するmodifierです。
+ *
+ * 下記コンテンツタイプで利用されます。
+ * - 音声つきサムネイル動画
+ * - スワイプ動画
+ * - 全天球静止画
+ *
+ * Styleguide 1.1.3
+ *
+ * --audioと--swipeは旧仕様です。
+ * --no-seekbarをご利用ください。
+ */
+.liveact-controls.liveact-controls--audio,
+.liveact-controls.liveact-controls--swipe,
+.liveact-controls.liveact-controls--no-seekbar {
+  padding: 0;
+  text-shadow: 1px 1px 3px #000;
+  border-bottom: none;
+  font-size: 54px;
+}
+
+/**
+ * .lac-div--mobile .liveact-controls.liveact-controls--audio,
+ * .lac-div--mobile .liveact-controls.liveact-controls--swipe,
+ * .lac-div--mobile .liveact-controls.liveact-controls--no-seekbar
+ *
+ * モバイル環境においては、UIアイコンの大きさは
+ * 画面の幅・高さのうち短い方の辺長に比例します。
+ *
+ * Styleguide 1.1.4
+ */
+.lac-div--mobile .liveact-controls.liveact-controls--audio,
+.lac-div--mobile .liveact-controls.liveact-controls--swipe,
+.lac-div--mobile .liveact-controls.liveact-controls--no-seekbar {
+  /* viewport-width: 320px -> 54px */
+  font-size: 16.875vmin;
+}
+
+/**
+ * .liveact-controls.liveact-controls--faded-out
+ *
+ * コントロールフェードアウトして
+ * 完全に見えなくなったときに付与されるmodifierです。
+ *
+ * Styleguide 1.1.5
+ */
+.liveact-controls.liveact-controls--faded-out * {
+  /**
+   * 見えないコントロールの誤操作を防止します。
+   */
+  pointer-events: none !important;
+}
+
+/**
+ * .liveact-controls--playback-range-adjustment-mode
+ *
+ * 再生範囲調節モードで付与されるmodifierです。
+ *
+ * Styleguide 1.1.6
+ */
+/**
+ * .liveact-controls > .lac-row
+ *
+ * シークバー・座布団のあるコントロールUI内の
+ * 1行を表す要素を指すセレクタです。
+ *
+ * Styleguide 1.1.7
+ */
+.liveact-controls > .lac-row {
+  padding: 0 0.3em 0 0.2em;
+  flex-direction: row;
+  display: inline-flex;
+  vertical-align: bottom;
+  box-sizing: border-box;
+  width: 100%;
+  align-items: center;
+  -webkit-align-items: center;
+  background-color: rgba(4, 0, 0, 0.65);
+  /**
+   * シークバー・座布団のあるコントロールUIでは、
+   * ザブトンをタップ・クリック可能です。
+   */
+  pointer-events: auto;
+}
+
+/**
+ * .liveact-controls > .lac-row > div
+ *
+ * シークバー・座布団のあるコントロールUI内の
+ * 1行を表す要素内に配置されている要素を指すセレクタです。
+ * 例)
+ * - ボタン
+ * - 時刻表示
+ *
+ * Styleguide 1.1.8
+ */
+.liveact-controls > .lac-row > div {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+  box-sizing: border-box;
+  pointer-events: auto;
+}
+
+/**
+ * .liveact-controls > .lac-row > div:hover
+ *
+ * シークバー・座布団のあるコントロールUI内の
+ * 1行を表す要素内に配置されている要素について、
+ * タップしたりマウスカーソルを載せたりした際に適用されるスタイルです。
+ *
+ * Styleguide 1.1.9
+ */
+.liveact-controls > .lac-row > div:hover {
+  color: white;
+}
+
+/**
+ * .liveact-controls.liveact-controls--audio > .lac-row,
+ * .liveact-controls.liveact-controls--swipe > .lac-row,
+ * .liveact-controls.liveact-controls--no-seekbar > .lac-row
+ *
+ * シークバー・座布団のないコントロールUI内の
+ * 1行を表す要素を指すセレクタです。
+ *
+ * Styleguide 1.1.10
+ */
+.liveact-controls.liveact-controls--audio > .lac-row,
+.liveact-controls.liveact-controls--swipe > .lac-row,
+.liveact-controls.liveact-controls--no-seekbar > .lac-row {
+  background-color: rgba(0, 0, 0, 0);
+  justify-content: flex-end;
+  padding: 0;
+  /**
+   * シークバー・座布団のないコントロールUIでは、
+   * ザブトンをタップ・クリックできません。
+   */
+  pointer-events: none;
+}
+
+/**
+ * コントロールUIのボタン
+ *
+ * Styleguide 1.2
+ */
+/**
+ * 共通
+ *
+ * Styleguide 1.2.1
+ */
+/**
+ * .lac-button
+ *
+ * コントロールUIのすべてのボタンを指すセレクタです。
+ * ボタンの大きさ等を記述します。
+ *
+ * Styleguide 1.2.1.1
+ */
+.lac-button {
+  text-align: center;
+  /* フォントアイコンのフォントを指定 */
+  /* デフォルトのフォントは本cssファイル末尾に、data-urlとして埋め込んであります。 */
+  font-family: 'liveact-controls';
+  font-style: normal;
+  cursor: pointer;
+  line-height: 1;
+  width: 1em;
+  height: 1em;
+}
+
+/**
+ * .lac-button:before
+ *
+ * コントロールUIのすべてのボタンを指すセレクタです。
+ * ボタンのアイコンを記述します。
+ *
+ * Styleguide 1.2.1.2
+ */
+.lac-button:before {
+  font-size: 60%;
+  width: 1em;
+  height: 1em;
+  margin: auto;
+  display: block;
+}
+
+/**
+ * .lac-buttonon
+ *
+ * ボタンが「オン」の状態であることを表すmodifierです。
+ *
+ * Styleguide 1.2.1.3
+ */
+/**
+ * 再生・一時停止ボタン
+ *
+ * Styleguide 1.2.2
+ */
+/**
+ * .lac-play
+ *
+ * 再生・一時停止ボタンを指すセレクタです。
+ *
+ * Styleguide 1.2.2.1
+ */
+/**
+ * .lac-play:before
+ *
+ * 状態      : 一時停止中
+ * アクション: 再生
+ *
+ *   [>
+ *
+ * Styleguide 1.2.2.2
+ */
+.lac-play:before {
+  content: "\e901";
+}
+
+/**
+ * .lac-play.lac-buttonon:before
+ *
+ * 状態      : 再生中
+ * アクション: 一時停止
+ *
+ *   ||
+ *
+ * Styleguide 1.2.2.3
+ */
+.lac-play.lac-buttonon:before {
+  content: "\e900";
+}
+
+/**
+ * 音声有効化/無効化（ミュート）ボタン
+ *
+ * Styleguide 1.2.3
+ */
+/**
+ * .lac-volume
+ *
+ * 音声有効化/無効化（ミュート）ボタン
+ *
+ * Styleguide 1.2.3.1
+ */
+/**
+ * .lac-volume:before
+ *
+ * 状態      : 音声がオフ
+ * アクション: 音声有効化
+ *
+ * Styleguide 1.2.3.2
+ */
+.lac-volume:before {
+  content: "\e902";
+}
+
+/**
+ * .lac-volume.lac-buttonon:before
+ *
+ * 状態      : 音声がオン
+ * アクション: 音声無効化
+ *
+ * Styleguide 1.2.3.3
+ */
+.lac-volume.lac-buttonon:before {
+  content: "\e903";
+}
+
+/**
+ * ループ有効化/無効化ボタン
+ *
+ * Styleguide 1.2.4
+ */
+/**
+ * .lac-loop
+ *
+ * ループ有効化/無効化ボタン
+ *
+ * Styleguide 1.2.4.1
+ */
+/**
+ * .lac-loop:before
+ *
+ * 状態      : ループオフ
+ * アクション: ループ有効化
+ *
+ * Styleguide 1.2.4.2
+ */
+.lac-loop:before {
+  content: "\e904";
+}
+
+/**
+ * .lac-loop.lac-buttonon:before
+ *
+ * 状態      : ループオン
+ * アクション: ループ無効化
+ *
+ * Styleguide 1.2.4.3
+ */
+.lac-loop.lac-buttonon:before {
+  content: "\e905";
+}
+
+/**
+ * フルスクリーン化/通常化ボタン
+ *
+ * Styleguide 1.2.5
+ */
+/**
+ * .lac-fullscreen
+ *
+ * フルスクリーン化/通常化ボタンを指すセレクタです。
+ *
+ * Styleguide 1.2.5.1
+ */
+/**
+ * .lac-fullscreen:before
+ *
+ * 状態      : 通常状態
+ * アクション: フルスクリーン化
+ *
+ * Styleguide 1.2.5.2
+ */
+.lac-fullscreen:before {
+  content: "\e906";
+}
+
+/**
+ * .lac-fullscreen.lac-buttonon:before
+ *
+ * 状態      : フルスクリーン状態
+ * アクション: 通常化
+ *
+ * Styleguide 1.2.5.3
+ */
+.lac-fullscreen.lac-buttonon:before {
+  content: "\e907";
+}
+
+/**
+ * プレーヤー中央の大きな再生ボタン
+ *
+ * Styleguide 1.2.6
+ */
+/**
+ * .lac-screen-play
+ *
+ * プレーヤー中央の大きな再生ボタンを指すセレクタです。
+ *
+ * Styleguide 1.2.6.1
+ */
+.lac-screen-play {
+  font-size: 80px;
+  width: 1em;
+  height: 1em;
+  /* centering */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: table-cell;
+  color: white;
+  vertical-align: middle;
+  box-sizing: border-box;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+/**
+ * .lac-div--mobile .lac-screen-play
+ *
+ * モバイル環境では、画面の幅高さ短い方の辺長に比例して大きさを計算します。
+ *
+ * Styleguide 1.2.6.2
+ */
+.lac-div--mobile .lac-screen-play {
+  /* viewport-width: 320px -> 80px */
+  font-size: 25vmin;
+}
+
+/**
+ * .lac-screen-play:before
+ *
+ * 状態      : 一時停止中
+ * アクション: 再生
+ *
+ *   [>
+ *
+ * Styleguide 1.2.6.3
+ */
+.lac-screen-play:before {
+  content: "\e901";
+  position: absolute;
+  font-size: 60px;
+  left: 18.0%;
+  top: 12.5%;
+}
+
+/**
+ * .lac-div--mobile .lac-screen-play:before
+ *
+ * モバイル環境では、画面の幅高さ短い方の辺長に比例して大きさを計算します。
+ *
+ * Styleguide 1.2.6.4
+ */
+.lac-div--mobile .lac-screen-play:before {
+  /* viewport-width: 320px -> 60px */
+  font-size: 18.75vmin;
+}
+
+/**
+ * .lac-screen-play.lac-buttonon:before
+ *
+ * 動画を再生すると非表示化するため、
+ * 再生状態のスタイルはありません。
+ *
+ * Styleguide 1.2.6.5
+ */
+/**
+ * スワイプ動画のズームインボタン
+ *
+ * Styleguide 1.2.7
+ */
+/**
+ * .lac-swipe-ui-zoom-in
+ *
+ * ズームインボタン
+ *
+ * Styleguide 1.2.7.1
+ */
+/**
+ * .lac-swipe-ui-zoom-in:before
+ *
+ * 平常時のズームインボタンの見た目を記述します。
+ *
+ * Styleguide 1.2.7.2
+ */
+.lac-swipe-ui-zoom-in:before {
+  content: "\e908";
+}
+
+/**
+ * .lac-swipe-ui-zoom-in:hover:before
+ *
+ * 平常時のズームインボタンの見た目を記述します。
+ * マウスカーソルが乗っている間、ならびに押下中の見た目を記述します。
+ *
+ * Styleguide 1.2.7.3
+ */
+.lac-swipe-ui-zoom-in:hover:before {
+  content: "\e909";
+}
+
+/**
+ * スワイプ動画のズームアウトボタン
+ *
+ * Styleguide 1.2.8
+ */
+/**
+ * .lac-swipe-ui-zoom-out
+ *
+ * ズームアウトボタン
+ *
+ * Styleguide 1.2.8.1
+ */
+/**
+ * .lac-swipe-ui-zoom-out:before
+ *
+ * 平常時のズームアウトボタンの見た目を記述します。
+ *
+ * Styleguide 1.2.8.2
+ */
+.lac-swipe-ui-zoom-out:before {
+  content: "\e90a";
+}
+
+/**
+ * .lac-swipe-ui-zoom-out:hover:before
+ *
+ * 平常時のズームアウトボタンの見た目を記述します。
+ * マウスカーソルが乗っている間、ならびに押下中の見た目を記述します。
+ *
+ * Styleguide 1.2.8.3
+ */
+.lac-swipe-ui-zoom-out:hover:before {
+  content: "\e90b";
+}
+
+/**
+ * スワイプ動画のモード切替ボタン
+ *
+ * Styleguide 1.2.9
+ */
+/**
+ * .lac-swipe-ui-mode-toggle
+ *
+ * スワイプ動画のモード切替ボタンを指すセレクタです。
+ *
+ * Styleguide 1.2.9.1
+ */
+/**
+ * .lac-swipe-ui-mode-toggle:before
+ *
+ * 状態      : 回転モード
+ * アクション: 回転モードから平行移動モードに切り替え
+ *
+ * Styleguide 1.2.9.2
+ */
+.lac-swipe-ui-mode-toggle:before {
+  content: "\e90c";
+}
+
+/**
+ * .lac-swipe-ui-mode-toggle.lac-buttonon:before
+ *
+ * 状態      : 平行移動モード
+ * アクション: 平行移動モードから回転モードに切り替え
+ *
+ * Styleguide 1.2.9.3
+ */
+.lac-swipe-ui-mode-toggle.lac-buttonon:before {
+  content: "\e90d";
+}
+
+/**
+ * ジャイロセンサの有効化/無効化ボタン
+ *
+ * Styleguide 1.2.10
+ */
+/**
+ * .lac-gyro-sensor
+ *
+ * ジャイロセンサの有効化/無効化ボタンを指すセレクタです。
+ *
+ * Styleguide 1.2.10.1
+ */
+/**
+ * .lac-gyro-sensor:before
+ *
+ * 状態      : ジャイロセンサーオフ状態
+ * アクション: ジャイロセンサー有効化
+ *
+ * Styleguide 1.2.10.2
+ */
+.lac-gyro-sensor:before {
+  content: "\e90e";
+}
+
+/**
+ * .lac-gyro-sensor.lac-buttonon:before
+ *
+ * 状態      : ジャイロセンサーオン状態
+ * アクション: ジャイロセンサーを無効化
+ *
+ * Styleguide 1.2.10.3
+ */
+.lac-gyro-sensor.lac-buttonon:before {
+  content: "\e90f";
+}
+
+/**
+ * チャプターミニメニュー開閉ボタン
+ *
+ * Styleguide 1.2.11
+ */
+/**
+ * .lac-chapter:before
+ *
+ * 状態      : チャプターミニメニューが閉じている
+ * アクション: チャプターミニメニューを開く
+ *
+ * Styleguide 1.2.11.1
+ */
+.lac-chapter:before {
+  content: "\e910";
+}
+
+/**
+ * .lac-chapter.lac-buttonon:before
+ *
+ * 状態      : チャプターミニメニューが開いている
+ * アクション: チャプターミニメニューを閉じる
+ *
+ * Styleguide 1.2.11.2
+ */
+.lac-chapter.lac-buttonon:before {
+  color: white;
+  content: "\e910";
+}
+
+/**
+ * 再生範囲ミニメニュー開閉ボタン
+ *
+ * Styleguide 1.2.12
+ */
+/**
+ * .lac-playback-range:before
+ *
+ * 状態      : 再生範囲ミニメニューが閉じている
+ * アクション: 再生範囲ミニメニューを開く
+ *
+ * Styleguide 1.2.12.1
+ */
+.lac-playback-range:before {
+  content: "\e911";
+}
+
+/**
+ * .lac-playback-range.lac-buttonon:before
+ *
+ * 状態      : 再生範囲ミニメニューが開いている
+ * アクション: 再生範囲ミニメニューを閉じる
+ *
+ * Styleguide 1.2.12.2
+ */
+.lac-playback-range.lac-buttonon:before {
+  color: #ea9723;
+}
+
+/**
+ * コマ送りボタン
+ *
+ * Styleguide 1.2.13
+ */
+/**
+ * .lac-next-frame
+ *
+ * コマ送りボタンを指すセレクタです。
+ *
+ * Styleguide 1.2.13.1
+ */
+.lac-next-frame {
+  font-size: 86.67%;
+}
+
+/**
+ * .lac-next-frame:before
+ *
+ * コマ送りボタンの見た目を記述します。
+ *
+ * Styleguide 1.2.13.2
+ */
+.lac-next-frame:before {
+  content: "\e915";
+}
+
+/**
+ * コマ戻しボタン
+ *
+ * Styleguide 1.2.14
+ */
+/**
+ * .lac-prev-frame,.lac-next-frame
+ *
+ * コマ戻しボタンを指すセレクタです。
+ *
+ * Styleguide 1.2.14.1
+ */
+.lac-prev-frame, .lac-next-frame {
+  font-size: 86.67%;
+}
+
+/**
+ * .lac-prev-frame:before {
+ *
+ * コマ戻しボタンの見た目を記述します。
+ *
+ * Styleguide 1.2.14.2
+ */
+.lac-prev-frame:before {
+  content: "\e914";
+}
+
+/**
+ * ミニメニューのピン留めボタン
+ *
+ * Styleguide 1.2.15
+ */
+/**
+ * .lac-minimenu .lac-minimenu-pin
+ *
+ * ミニメニューのピン留めボタンを指すセレクタです。
+ *
+ * Styleguide 1.2.15.1
+ */
+.lac-minimenu .lac-minimenu-pin {
+  position: absolute;
+  top: 0.1em;
+  right: 0.1em;
+  width: auto;
+  height: auto;
+  font-size: 1.5em;
+}
+
+/**
+ * .lac-pin:before
+ *
+ * 状態      : ピン留めされていない
+ * アクション: ピン留めを行う
+ *
+ * Styleguide 1.2.15.2
+ */
+.lac-pin:before {
+  content: "\e916";
+}
+
+/**
+ * .lac-pin.lac-buttonon:before
+ *
+ * 状態      : ピン留めされている
+ * アクション: ピン留めを解除する
+ *
+ * Styleguide 1.2.15.3
+ */
+.lac-pin.lac-buttonon:before {
+  color: white;
+}
+
+/**
+ * コントロールのデザイン調整用スペーサー
+ *
+ * Styleguide 1.2.16
+ */
+/**
+ * .lac-spacer
+ * コントロールのデザイン調整用スペーサーを指すセレクタです。
+ *
+ * Styleguide 1.2.16.1
+ */
+.lac-spacer {
+  flex-grow: 1;
+}
+
+/**
+ * 再生時刻表示
+ *
+ * Styleguide 1.2.17
+ */
+/**
+ * .lac-time
+ *
+ * 再生時刻表示部分を指すセレクタです。
+ * ボタンではありませんが、便宜的にここに記述しています。
+ *
+ * Styleguide 1.2.17.1
+ */
+.lac-time {
+  font-size: 40% !important;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/**
+ * 再生速度表示・再生速度ミニメニュー開閉ボタン
+ *
+ * Styleguide 1.2.18
+ */
+/**
+ * .lac-playback-rate
+ *
+ * 再生速度表示・再生速度ミニメニュー開閉ボタンを指すセレクタです。
+ *
+ * Styleguide 1.2.18.1
+ */
+.lac-playback-rate {
+  font-size: 70% !important;
+  white-space: nowrap;
+  width: 2em;
+}
+
+/**
+ * .lac-playback-rate::before {
+ *
+ * 再生速度表示・再生速度ミニメニュー開閉ボタンの表示内容を記述します。
+ * 状態      : 再生速度ミニメニューが閉じている
+ * アクション: 再生速度ミニメニューを開く
+ *
+ * Styleguide 1.2.18.2
+ */
+.lac-playback-rate::before {
+  width: 100%;
+  content: "x" attr(data-playback-rate);
+}
+
+/**
+ * .lac-playback-rate.lac-buttonon:before
+ *
+ * 再生速度表示・再生速度ミニメニュー開閉ボタンの表示内容を記述します。
+ * 状態      : 再生速度ミニメニューが開いている
+ * アクション: 再生速度ミニメニューを閉じる
+ *
+ * Styleguide 1.2.18.3
+ */
+.lac-playback-rate.lac-buttonon:before {
+  color: white;
+}
+
+/**
+ * ユーザカスタムボタンサンプル
+ *
+ * Styleguide 1.2.99
+ */
+/**
+ * .lac-user-button1
+ *
+ * 必要に応じて、大きさの調整等を行ってください。
+ *
+ * Styleguide 1.2.99.1
+ */
+/**
+ * .lac-user-button1:before
+ *
+ * contentプロパティやbackground-imageプロパティ等を用いて、
+ * ボタンの見た目を記述してください。
+ *
+ * Styleguide 1.2.99.2
+ */
+.lac-user-button1:before {
+  /* content: "\e906"; */
+}
+
+/**
+ * ミニメニュー
+ *
+ * Styleguide 1.3
+ */
+/**
+ * ミニメニュー共通
+ *
+ * Styleguide 1.3.1
+ */
+/**
+ * .lac-minimenu-field
+ *
+ * ミニメニューが配置されうる領域を表します。
+ * .liveact-controlの領域うち、.lac-row以外の領域です。
+ *
+ * Styleguide 1.3.1.1
+ */
+.lac-minimenu-field {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-grow: 1;
+  /**
+   * タップやクリックのイベントを処理しません。
+   * 背面のcanvasに委ねます。
+   */
+  pointer-events: none;
+}
+
+/**
+ * .lac-minimenu
+ *
+ * ミニメニューに共通して付与されるセレクタです。
+ * ミニメニューが縦に伸びた際に使用される領域も包含します。
+ *
+ * Styleguide 1.3.1.2
+ */
+.lac-minimenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  align-items: flex-end;
+  flex-direction: column-reverse;
+}
+
+/**
+ * .lac-minimenu.lac-minimenu--open
+ *
+ * ミニメニューが開いているとき付与されるmodifierです。
+ *
+ * Styleguide 1.3.1.3
+ */
+.lac-minimenu.lac-minimenu--open {
+  display: flex;
+}
+
+/**
+ * .lac-minimenu-wrap
+ *
+ * ミニメニューのウィンドウ部分に相当する要素を指すセレクタです。
+ * 下記を内包します:
+ * - header
+ * - body
+ * - footer
+ * - pin ... ピン留めのピン
+ *
+ * Styleguide 1.3.1.4
+ */
+.lac-minimenu-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 4px;
+  padding: 12px;
+  max-height: 100%;
+  width: 100%;
+  word-wrap: break-word;
+  pointer-events: auto;
+  background-color: rgba(4, 0, 0, 0.69);
+  overflow: hidden;
+  border-radius: 4px;
+  font-size: 0.5em;
+}
+
+/**
+ * .lac-minimenu .lac-minimenu-header
+ *
+ * ミニメニューの表題部分を指すセレクタです。
+ *
+ * Styleguide 1.3.1.5
+ */
+.lac-minimenu .lac-minimenu-header {
+  text-align: center;
+  padding: 0 0.8em;
+  min-width: 6em;
+}
+
+/**
+ * .lac-minimenu .lac-minimenu-body
+ *
+ * ミニメニューの内容部分を指すセレクタです。
+ *
+ * Styleguide 1.3.1.6
+ */
+.lac-minimenu .lac-minimenu-body {
+  overflow-y: auto;
+  padding: 4px;
+  margin: 0.5em;
+}
+
+/**
+ * .lac-minimenu .lac-minimenu-footer
+ *
+ * ミニメニューの下部領域を指すセレクタです。
+ *
+ * Styleguide 1.3.1.7
+ */
+.lac-minimenu .lac-minimenu-footer {
+  text-align: center;
+}
+
+/**
+ * .lac-minimenu .lac-onminimenu-button
+ *
+ * ミニメニュー上のボタンに共通して付与されるセレクタです。
+ * ミニメニュー上のボタンは二重構造になっており、外側に付与されます。
+ *
+ * Styleguide 1.3.1.8
+ */
+.lac-minimenu .lac-onminimenu-button {
+  padding: 4px;
+  background-color: #424545;
+  border-radius: 2em;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 0.6em;
+}
+
+/**
+ * .lac-minimenu .lac-onminimenu-button > .lac-onminimenu-inner-button
+ *
+ * ミニメニュー上のボタンに共通して付与されるセレクタです。
+ * ミニメニュー上のボタンは二重構造になっており、内側に付与されます。
+ *
+ * Styleguide 1.3.1.9
+ */
+.lac-minimenu .lac-onminimenu-button > .lac-onminimenu-inner-button {
+  padding: 4px 1em;
+  background-color: white;
+  border-radius: 2em;
+  color: #040000;
+}
+
+/**
+ * .lac-minimenu .lac-onminimenu-button.lac-onminimenu-button--disabled
+ *
+ * ミニメニュー上のボタンが無効な状態を表すmodifierです。
+ *
+ * Styleguide 1.3.1.10
+ */
+.lac-minimenu .lac-onminimenu-button.lac-onminimenu-button--disabled {
+  cursor: default;
+}
+
+/**
+ * .lac-minimenu .lac-onminimenu-button.lac-onminimenu-button--disabled > .lac-onminimenu-inner-button
+ *
+ * ミニメニュー上のボタンが無効な場合、
+ * 二重構造の内側の見た目を記述するスタイルです。
+ *
+ * Styleguide 1.3.1.11
+ */
+.lac-minimenu .lac-onminimenu-button.lac-onminimenu-button--disabled > .lac-onminimenu-inner-button {
+  background-color: #686868;
+}
+
+/**
+ * .lac-toggle-unit
+ *
+ * 単位切替ボタンを指すセレクタです。
+ *
+ * 下記ミニメニューで共通です。
+ * - チャプターミニメニュー
+ * - 再生範囲ミニメニュー
+ *
+ * Styleguide 1.3.1.12
+ */
+.lac-toggle-unit {
+  width: 9em;
+}
+
+/**
+ * チャプターミニメニュー
+ *
+ * Styleguide 1.3.2
+ */
+/**
+ * .lac-chapter-minimenu ol
+ *
+ * 区切り位置入力フォームの
+ * 各行をまとめる要素を指すセレクタです。
+ *
+ * Styleguide 1.3.2.1
+ */
+.lac-chapter-minimenu ol {
+  text-align: center;
+  list-style: none;
+  counter-reset: chapter-separator;
+  padding: 0;
+  margin: 0 auto;
+  display: table;
+  border-collapse: separate;
+  border-spacing: 0 1px;
+}
+
+/**
+ * .lac-chapter-minimenu ol li.lac-separator-form-item
+ *
+ * 区切り位置入力フォームの各行を指すセレクタです。
+ *
+ * Styleguide 1.3.2.2
+ */
+.lac-chapter-minimenu ol li.lac-separator-form-item {
+  display: table-row;
+  margin-bottom: 1px;
+}
+
+/**
+ * .lac-chapter-minimenu ol li.lac-separator-form-item--added-animation
+ *
+ * 新しく追加された区切り位置入力フォームに付与されるmodifierです。
+ *
+ * Styleguide 1.3.2.3
+ */
+.lac-chapter-minimenu ol li.lac-separator-form-item--added-animation {
+  animation: lacSeparatorFormItemFadeIn 0.1s ease-in-out 0s 1 normal;
+}
+
+/**
+ * @keyframes lacSeparatorFormItemFadeIn
+ *
+ * 区切り位置入力フォームが新しく追加された際のアニメーションを定義します。
+ *
+ * Styleguide 1.3.2.4
+ */
+@keyframes lacSeparatorFormItemFadeIn {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/**
+ * .lac-chapter-minimenu ol li.lac-separator-form-item > *
+ *
+ * 区切り位置入力フォームの各行内のレイアウトを調節します。
+ *
+ * Styleguide 1.3.2.5
+ */
+.lac-chapter-minimenu ol li.lac-separator-form-item > * {
+  display: table-cell;
+}
+
+/**
+ * .lac-chapter-minimenu ol li.lac-separator-form-item .lac-separator-number
+ *
+ * 区切り位置入力フォームの各行の行番号部分を指すセレクタです。
+ *
+ * Styleguide 1.3.2.6
+ */
+.lac-chapter-minimenu ol li.lac-separator-form-item .lac-separator-number {
+  background-color: rgba(4, 0, 0, 0.33);
+  padding: 0 0.8em;
+  vertical-align: middle;
+}
+
+/**
+ * .lac-chapter-minimenu ol li.lac-separator-form-item .lac-separator-number:before
+ *
+ * 区切り位置入力フォームの各行の行番号を採番します。
+ *
+ * Styleguide 1.3.2.7
+ */
+.lac-chapter-minimenu ol li.lac-separator-form-item .lac-separator-number:before {
+  counter-increment: chapter-separator;
+  content: counter(chapter-separator);
+}
+
+/**
+ * .lac-chapter-minimenu ol li.lac-separator-form-item input[type=number]
+ *
+ * 区切り位置入力フォームの各行の入力欄を指すセレクタです。
+ *
+ * Styleguide 1.3.2.8
+ */
+.lac-chapter-minimenu ol li.lac-separator-form-item input[type=number] {
+  width: 5em;
+}
+
+/**
+ * .lac-chapter-minimenu .lac-remove
+ *
+ * 区切り位置入力フォームの各行の削除ボタンを指すセレクタです。
+ *
+ * Styleguide 1.3.2.9
+ */
+.lac-chapter-minimenu .lac-remove {
+  cursor: pointer;
+  padding-left: 0.4em;
+  vertical-align: middle;
+}
+
+/**
+ * .lac-chapter-minimenu .lac-remove:before
+ *
+ * 区切り位置入力フォームの各行の削除ボタンの見た目を記述します。
+ *
+ * Styleguide 1.3.2.10
+ */
+.lac-chapter-minimenu .lac-remove:before {
+  font-family: 'liveact-controls';
+  font-style: normal;
+  content: '\e913';
+  font-size: 0.5em;
+}
+
+/**
+ * .lac-chapter-minimenu .lac-remove:hover
+ *
+ * 区切り位置入力フォームの各行の削除ボタンの見た目を記述します。
+ * マウスカーソルを載せた際に適用されます。
+ *
+ * Styleguide 1.3.2.11
+ */
+.lac-chapter-minimenu .lac-remove:hover {
+  color: white;
+}
+
+/**
+ * .lac-chapter-minimenu .lac-chapter-add
+ *
+ * 区切り位置追加ボタンを指すセレクタです。
+ *
+ * Styleguide 1.3.2.12
+ */
+.lac-chapter-minimenu .lac-chapter-add {
+  width: 4em;
+  margin-right: 1em;
+}
+
+/**
+ * 再生範囲ミニメニュー
+ *
+ * Styleguide 1.3.3
+ */
+/**
+ * .lac-playback-range-minimenu .lac-minimenu-wrap
+ *
+ * 再生範囲ミニメニューのウィンドウに対応する要素を指すセレクタです。
+ *
+ * Styleguide 1.3.3.1
+ */
+/**
+ * .lac-playback-range-minimenu .lac-minimenu-header
+ *
+ * 再生範囲ミニメニューの表題部分を指すセレクタです。
+ *
+ * Styleguide 1.3.3.2
+ */
+.lac-playback-range-minimenu .lac-minimenu-header {
+  padding: 0;
+}
+
+/**
+ * .lac-playback-range-minimenu .lac-minimenu-body
+ *
+ * 再生範囲ミニメニューの内容部分を指すセレクタです。
+ *
+ * Styleguide 1.3.3.3
+ */
+.lac-playback-range-minimenu .lac-minimenu-body {
+  text-align: center;
+}
+
+/**
+ * .lac-playback-range-minimenu .lac-minimenu-body > .lac-playback-range-minimenu-item
+ *
+ * 再生範囲ミニメニューの開始・終了入力フォーム各行を指すセレクタです。
+ *
+ * Styleguide 1.3.3.4
+ */
+.lac-playback-range-minimenu .lac-minimenu-body > .lac-playback-range-minimenu-item {
+  margin: 0 auto 4px;
+  display: block;
+}
+
+/**
+ * .lac-playback-range-minimenu .lac-minimenu-body > .lac-playback-range-minimenu-item > label > input
+ *
+ * 再生範囲ミニメニューの開始・終了入力フォーム各行の、入力欄を指すセレクタです。
+ *
+ * Styleguide 1.3.3.5
+ */
+.lac-playback-range-minimenu .lac-minimenu-body > .lac-playback-range-minimenu-item > label > input {
+  width: 5em;
+  margin-left: 1em;
+}
+
+/**
+ * .lac-playback-range-minimenu .lac-minimenu-pin
+ *
+ * 再生範囲ミニメニューのピン留めアイコンは非表示です。
+ *
+ * Styleguide 1.3.3.6
+ */
+.lac-playback-range-minimenu .lac-minimenu-pin {
+  display: none;
+}
+
+/**
+ * 再生速度ミニメニュー
+ *
+ * Styleguide 1.3.4
+ */
+/**
+ * .lac-playback-rate-minimenu .lac-minimenu-body
+ *
+ * 再生速度ミニメニューの内容部分を指すセレクタです。
+ *
+ * Styleguide 1.3.4.1
+ */
+.lac-playback-rate-minimenu .lac-minimenu-body {
+  text-align: center;
+}
+
+/**
+ * .lac-playback-rate-minimenu .lac-minimenu-body .lac-playback-rate-minimenu-line
+ *
+ * 再生速度ミニメニューの、プルダウンつきスライダUI部分を指すセレクタです。
+ *
+ * Styleguide 1.3.4.2
+ */
+.lac-playback-rate-minimenu .lac-minimenu-body .lac-playback-rate-minimenu-line {
+  display: flex;
+}
+
+/**
+ * .lac-playback-rate-minimenu .lac-minimenu-body .lac-playback-rate-minimenu-line select
+ *
+ * 再生速度ミニメニューの、プルダウンつきスライダUIのプルダウン部分を指すセレクタです。
+ *
+ * Styleguide 1.3.4.3
+ */
+.lac-playback-rate-minimenu .lac-minimenu-body .lac-playback-rate-minimenu-line select {
+  margin-left: 0.5em;
+}
+
+/**
+ *
+ * スライダー
+ *
+ * Styleguide 1.4
+ */
+/**
+ * スライダー共通
+ *
+ * Styleguide 1.4.1
+ */
+/**
+ * .lac-slider
+ *
+ * スライダー類に共通して付与されるセレクタです。
+ * - シークバー
+ * - 音量バー
+ *
+ * .lac-slider-wrapを包含します。
+ *
+ * Styleguide 1.4.1.1
+ */
+.lac-slider {
+  display: inline-flex;
+  height: 1em;
+  /**
+   * スライダーノブが掃く部分よりも外側の空白部分は
+   * マウスやタップを透過させる
+   */
+  pointer-events: none;
+  padding: 0 0.3em;
+  margin: 0 0.1em;
+}
+
+/**
+ * .lac-slider .lac-slider-wrap
+ *
+ * スライダーの部品を束ねます。
+ *
+ * 下記を包含します。
+ * - .lac-slider-background
+ * - .lac-slider-base
+ * - .lac-slider-pointer
+ *
+ * Styleguide 1.4.1.2
+ */
+.lac-slider .lac-slider-wrap {
+  position: relative;
+  width: 100%;
+  height: 0;
+  margin: auto 0;
+}
+
+/**
+ * .lac-slider .lac-slider-wrap *
+ *
+ * スライダーを構成する各部品を
+ * タップ・クリック可能にします。
+ *
+ * Styleguide 1.4.1.3
+ */
+.lac-slider .lac-slider-wrap * {
+  pointer-events: auto;
+}
+
+/**
+ * .lac-slider.lac-slider .lac-slider-background,
+ * .lac-slider.lac-slider .lac-slider-background-inner,
+ * .lac-slider.lac-slider .lac-slider-base
+ *
+ * スライダーを構成する各部品共通の設定です。
+ *
+ * Styleguide 1.4.1.4
+ */
+.lac-slider.lac-slider .lac-slider-background,
+.lac-slider.lac-slider .lac-slider-background-inner,
+.lac-slider.lac-slider .lac-slider-base {
+  position: absolute;
+  font-size: 140%;
+  width: 100%;
+  height: 0.10em;
+  margin-top: -0.05em;
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  cursor: pointer;
+}
+
+/**
+ * .lac-slider.lac-slider .lac-slider-background
+ *
+ * スライダーノブが掃く領域のエンボスを表現します。
+ * くぼみの外側です。
+ *
+ * Styleguide 1.4.1.5
+ */
+.lac-slider.lac-slider .lac-slider-background {
+  opacity: 0.18;
+  background: linear-gradient(0deg, gray 0%, black 100%);
+  width: calc(100% + 0.1em);
+  margin-left: -0.05em;
+  font-size: 555%;
+  border-radius: 1em;
+}
+
+/**
+ * .lac-slider.lac-slider .lac-slider-background .lac-slider-background-inner
+ *
+ * スライダーノブが掃く領域のエンボスを表現します。
+ * くぼみの内側です。
+ *
+ * Styleguide 1.4.1.6
+ */
+.lac-slider.lac-slider .lac-slider-background .lac-slider-background-inner {
+  width: calc(100% - 0.01em);
+  margin-left: 0.005em;
+  height: calc(100% - 0.01em);
+  margin-top: 0.005em;
+  background: #040000;
+  border-radius: 1em;
+}
+
+/**
+ * .lac-slider.lac-slider .lac-slider-base {
+ *
+ * スライダーノブが動く溝を表現します。
+ *
+ * Styleguide 1.4.1.7
+ */
+.lac-slider.lac-slider .lac-slider-base {
+  background: rgba(153, 153, 153, 0.75);
+  pointer-events: none;
+}
+
+/**
+ * .lac-slider .lac-slider-pointer
+ *
+ * スライダーノブです。
+ *
+ * Styleguide 1.4.1.8
+ */
+.lac-slider .lac-slider-pointer {
+  position: absolute;
+  z-index: 100;
+  font-size: 555%;
+  width: 0.1em;
+  height: 0.1em;
+  margin-top: -0.05em;
+  margin-left: -0.05em;
+  /* 白色 */
+  background: gainsboro;
+  /* オレンジ(シークバーのポインタと同じ色) */
+  /*background: rgba(234, 151, 35, 1);*/
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  cursor: pointer;
+}
+
+/**
+ * シークバースライダー
+ *
+ * Styleguide 1.4.2
+ */
+/**
+ * .lac-slider.lac-slider--seek
+ *
+ * シークバースライダーを表すmodifierです。
+ *
+ * Styleguide 1.4.2.1
+ */
+.lac-slider.lac-slider--seek {
+  /* fill rest width */
+  flex-grow: 1;
+}
+
+/**
+ * .lac-slider.lac-slider--seek .lac-slider-pointer
+ *
+ * スライダーノブをシークバー仕様に調節します。
+ *
+ * Styleguide 1.4.2.2
+ */
+.lac-slider.lac-slider--seek .lac-slider-pointer {
+  background: #ea9723;
+}
+
+/**
+ * .lac-slider.lac-slider--seek .lac-seekbar-loading,
+ * .lac-slider.lac-slider--seek .lac-seekbar-current,
+ * .lac-slider.lac-slider--seek .lac-seekbar-prohibited
+ *
+ * スライダーノブが動く溝部分について、下記を表現します。
+ * - .lac-seekbar-loading    ... 読み込み済領域
+ * - .lac-seekbar-current    ... 現在の再生位置
+ * - .lac-seekbar-prohibited ... 再生禁止領域
+ *
+ * Styleguide 1.4.2.3
+ */
+.lac-slider.lac-slider--seek .lac-seekbar-loading,
+.lac-slider.lac-slider--seek .lac-seekbar-current,
+.lac-slider.lac-slider--seek .lac-seekbar-prohibited {
+  position: absolute;
+  font-size: 140%;
+  width: 100%;
+  height: 0.10em;
+  margin-top: -0.05em;
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  /**
+   * タップやマウスのイベントはここでは捕捉せず、
+   * .lac-slider-baseに委ねます。
+   */
+  pointer-events: none;
+}
+
+/**
+ * .lac-slider.lac-slider--seek .lac-seekbar-current
+ *
+ * スライダーノブが動く溝部分において、「現在の再生位置」の見た目を記述します。
+ *
+ * Styleguide 1.4.2.3
+ */
+.lac-slider.lac-slider--seek .lac-seekbar-current {
+  background: #ea9723;
+}
+
+/**
+ * .lac-slider.lac-slider--seek .lac-seekbar-loading,
+ * .lac-slider.lac-slider--seek .lac-seekbar-prohibited
+ *
+ * スライダーノブが動く溝部分において、下記の見た目を記述します。
+ * - 読み込み済領域
+ * - 再生禁止領域
+ *
+ * Styleguide 1.4.2.4
+ */
+.lac-slider.lac-slider--seek .lac-seekbar-loading,
+.lac-slider.lac-slider--seek .lac-seekbar-prohibited {
+  /**
+   * 背景(background)はJavaScriptで動的に設定しています。
+   */
+}
+
+/**
+ * .lac-slider.lac-slider--seek .lac-slider-wrap > .lac-playback-range-arrow-list
+ *
+ * 再生範囲調節つまみを束ねる要素を指すセレクタです。
+ * デフォルトでは非表示です。
+ *
+ * Styleguide 1.4.2.5
+ */
+.lac-slider.lac-slider--seek .lac-slider-wrap > .lac-playback-range-arrow-list {
+  /* デフォルトでは非表示 */
+  display: none;
+  cursor: none;
+  pointer-events: none;
+}
+
+/**
+ * .liveact-controls--playback-range-adjustment-mode .lac-slider.lac-slider--seek .lac-slider-wrap > .lac-playback-range-arrow-list
+ *
+ * 再生範囲調節つまみを束ねる要素を指すセレクタです。
+ * 再生範囲調整モードにおいて表示します。
+ *
+ * Styleguide 1.4.2.5
+ */
+.liveact-controls--playback-range-adjustment-mode .lac-slider.lac-slider--seek .lac-slider-wrap > .lac-playback-range-arrow-list {
+  pointer-events: auto;
+  display: block;
+}
+
+/**
+ * .lac-slider.lac-slider--seek .lac-slider-wrap > .lac-playback-range-arrow-list > .lac-playback-range-arrow
+ *
+ * 再生範囲調節つまみを表現します。
+ * 大きさの調節等を行います。
+ *
+ * Styleguide 1.4.2.6
+ */
+.lac-slider.lac-slider--seek .lac-slider-wrap > .lac-playback-range-arrow-list > .lac-playback-range-arrow {
+  position: absolute;
+  cursor: pointer;
+  margin-top: -1em;
+  margin-left: -0.52em;
+  font-size: 0.33em;
+  color: white;
+}
+
+/**
+ * .lac-slider.lac-slider--seek .lac-slider-wrap > .lac-playback-range-arrow-list > .lac-playback-range-arrow:before
+ *
+ * 再生範囲調節つまみを表現します。
+ * アイコンの見た目等を記述します。
+ *
+ * Styleguide 1.4.2.7
+ */
+.lac-slider.lac-slider--seek .lac-slider-wrap > .lac-playback-range-arrow-list > .lac-playback-range-arrow:before {
+  font-family: 'liveact-controls';
+  font-style: normal;
+  content: '\e912';
+}
+
+/**
+ * .liveact-controls--playback-range-adjustment-mode .lac-slider.lac-slider--seek .lac-slider-pointer
+ *
+ * 再生範囲調整モードでは、スライダーノブを非表示にします。
+ * 再生範囲調節つまみと重なってしまい操作性を損なうためです。
+ *
+ * Styleguide 1.4.2.8
+ */
+.liveact-controls--playback-range-adjustment-mode .lac-slider.lac-slider--seek .lac-slider-pointer {
+  display: none;
+}
+
+/**
+ * .lac-slider.lac-slider--seek .lac-slider-wrap > .lac-seekbar-separator-list
+ *
+ * シークバー上のチャプター区切り線を束ねる要素を指すセレクタです。
+ *
+ * Styleguide 1.4.2.9
+ */
+.lac-slider.lac-slider--seek .lac-slider-wrap > .lac-seekbar-separator-list {
+  cursor: none;
+  pointer-events: none;
+}
+
+/**
+ * .lac-slider.lac-slider--seek .lac-slider-wrap > .lac-seekbar-separator-list > .lac-seekbar-separator
+ *
+ * シークバー上のチャプター区切り線を表現します。
+ *
+ * Styleguide 1.4.2.10
+ */
+.lac-slider.lac-slider--seek .lac-slider-wrap > .lac-seekbar-separator-list > .lac-seekbar-separator {
+  position: absolute;
+  cursor: none;
+  pointer-events: none;
+  width: 10px;
+  height: 0.1em;
+  transform: scaleX(0.1);
+  font-size: 555%;
+  margin-top: -0.05em;
+  margin-left: -5px;
+  background: white;
+}
+
+/**
+ * シークバースライダー(コンパクト)
+ *
+ * Styleguide 1.4.3
+ */
+/**
+ * .lac-slider.lac-slider--seek.lac-slider--compact,
+ * .lac-slider.lac-slider--seek.lac-seekbar--compact
+ *
+ * コンパクトなシークバースライダーに付与されるmodifierです。
+ * 二段組のコントロールUIで使用すると効果的です。
+ *
+ * Styleguide 1.4.3.1
+ */
+.lac-slider.lac-slider--seek.lac-slider--compact,
+.lac-slider.lac-slider--seek.lac-seekbar--compact {
+  height: 0.5em;
+  margin: 0;
+}
+
+/**
+ * .lac-slider.lac-slider--seek.lac-slider--compact .lac-slider-wrap,
+ * .lac-slider.lac-slider--seek.lac-seekbar--compact .lac-slider-wrap
+ *
+ * コンパクトなシークバースライダーの、
+ * 各部品を束ねる要素を指すセレクタです。
+ *
+ * Styleguide 1.4.3.2
+ */
+.lac-slider.lac-slider--seek.lac-slider--compact .lac-slider-wrap,
+.lac-slider.lac-slider--seek.lac-seekbar--compact .lac-slider-wrap {
+  margin: auto 0 0.2em;
+}
+
+/**
+ * 音量調節スライダー
+ *
+ * Styleguide 1.4.4
+ */
+/**
+ * .lac-slider.lac-slider--volume
+ *
+ * 音量調節スライダーに付与されるmodifierです。
+ *
+ * Styleguide 1.4.4.1
+ */
+.lac-slider.lac-slider--volume {
+  padding: 0 0.2em;
+  margin: 0 0.15em;
+  width: 2em;
+}
+
+/**
+ * .lac-slider.lac-slider--volume .lac-slider-background,
+ * .lac-slider.lac-slider--volume .lac-slider-pointer
+ *
+ * スライダーノブ、ならびにスライダーノブが掃く領域の大きさを調節します。
+ *
+ * Styleguide 1.4.4.2
+ */
+.lac-slider.lac-slider--volume .lac-slider-background,
+.lac-slider.lac-slider--volume .lac-slider-pointer {
+  font-size: 450%;
+}
+
+/**
+ * 再生速度調節スライダー
+ *
+ * Styleguide 1.4.5
+ */
+/**
+ * .lac-minimenu .lac-slider.lac-slider--playback-rate
+ *
+ * 再生速度調節ミニメニュー上の再生速度調節スライダーに付与されるmodifierです。
+ *
+ * Styleguide 1.4.5.1
+ */
+.lac-minimenu .lac-slider.lac-slider--playback-rate {
+  flex-grow: 1;
+  font-size: 2em;
+}
+
+/**
+ * LiveAct(R) PRO内部で使用するスタイル
+ *
+ * Styleguide 2
+ */
+/**
+ * 汎用
+ *
+ * Styleguide 2.1
+ */
+/**
+ * .liveact-player__element--invisible
+ *
+ * LiveAct(R) PRO管理下の要素を非表示にする際に付与されるmodifierです。
+ *
+ * Styleguide 2.1.1
+ */
+.liveact-player__element--invisible {
+  display: none !important;
+}
+
+/**
+ * .liveact-player__element--reset-touch
+ *
+ * JavaScriptの PointerEvent向けの、
+ * タッチ時デフォルト動作を無効化する際に使用するmodifierです。
+ *
+ * Styleguide 2.1.2
+ */
+/**
+ * .liveact-player__element--reset-touch.liveact-player__element--MS
+ *
+ * Internet Explorer/Edge環境でのみ
+ * JavaScriptの PointerEventのタッチ時デフォルト動作を無効化します。
+ *
+ * タッチ端末上・Internet Explorer/Edge環境において
+ * スワイプ操作を検出・適切に処理するために必要です。
+ *
+ * Styleguide 2.1.3
+ */
+.liveact-player__element--reset-touch.liveact-player__element--MS {
+  -ms-touch-action: none;
+  touch-action: none;
+}
+
+/**
+ * .liveact-player__element--reset-highlight
+ *
+ * iOS/Androidにおいて、要素をタッチ操作した際の
+ * デフォルトのハイライトを無効化します
+ *
+ * Styleguide 2.1.4
+ */
+.liveact-player__element--reset-highlight {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/**
+ * プレーヤー全体・リサイズ計算関連
+ *
+ * Styleguide 2.2
+ */
+/**
+ * .lac-div
+ *
+ * プレーヤー全体を包む要素を指すセレクタです。
+ * canvas等を内包します。
+ *
+ * Styleguide 2.2.1
+ */
+.lac-div {
+  /**
+   * タッチ端末において、タップ長押し時に
+   * 選択されてしまうのを防ぎます
+   */
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* 子要素に合わせてリサイズします */
+  display: inline-block;
+  vertical-align: bottom;
+  overflow: hidden;
+}
+
+/**
+ * .lac-div--mobile
+ *
+ * モバイル端末で閲覧した際に付与されるmodifierです。
+ *
+ * Styleguide 2.2.2
+ */
+/**
+ * .lac-div--width-set
+ *
+ * CriLaPlayer.resizeCanvasToFixedRatioWidth メソッドにより、
+ * プレーヤーを幅指定でリサイズした際に付与されるmodifierです。
+ *
+ * Styleguide 2.2.3
+ */
+/**
+ * .lac-div--height-set
+ *
+ * CriLaPlayer.resizeCanvasToFixedRatioHeight メソッドにより、
+ * プレーヤーを高さ指定でリサイズした際に付与されるmodifierです。
+ *
+ * Styleguide 2.2.4
+ */
+/**
+ * .lac-div__fit
+ *
+ * .lac-divの子要素で、.lac-divに
+ * ぴったりフィットするべき要素を指すセレクタです。
+ *
+ * Styleguide 2.2.5
+ */
+.lac-div__fit {
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+/**
+ * .lac-div.lac-div--width-set .lac-div__fit
+ *
+ * プレーヤーを幅指定でリサイズした場合、
+ * .lac-divの子要素で、.lac-divにぴったりフィットするべき要素については、
+ * 幅方向にフィットさせます。
+ *
+ * Styleguide 2.2.6
+ */
+.lac-div.lac-div--width-set .lac-div__fit {
+  width: 100%;
+}
+
+/**
+ * .lac-div.lac-div--height-set .lac-div__fit
+ *
+ * プレーヤーを高さ指定でリサイズした場合、
+ * .lac-divの子要素で、.lac-divにぴったりフィットするべき要素については、
+ * 高さ方向にフィットさせます。
+ *
+ * Styleguide 2.2.7
+ */
+.lac-div.lac-div--height-set .lac-div__fit {
+  height: 100%;
+}
+
+/**
+ * .lac-video-div
+ *
+ * videoタグを束ねる要素を指すセレクタです。
+ *
+ * Styleguide 2.2.8
+ */
+.lac-video-div {
+  position: absolute;
+}
+
+/**
+ * .lac-video-div > video
+ *
+ * videoタグを束ねる要素の子要素のvideoタグは、
+ * 親要素いっぱいに広げます。
+ *
+ * Styleguide 2.2.9
+ */
+.lac-video-div > video {
+  position: absolute;
+  object-fit: fill;
+}
+
+/**
+ * .lac-video-div > video:first-of-type
+ *
+ * videoタグを束ねる要素の子要素のvideoタグのうち、
+ * 先頭のものは相対位置指定とします。
+ * videoタグに合わせて.lac-video-divの解像度を計算させるためです。
+ *
+ * Styleguide 2.2.10
+ */
+.lac-video-div > video:first-of-type {
+  position: relative;
+}
+
+/**
+ * .lac-audio-div
+ *
+ * audioタグを束ねる要素を指すセレクタです。
+ * 表示しません。
+ *
+ * Styleguide 2.2.11
+ */
+.lac-audio-div {
+  position: absolute;
+  display: none;
+}
+
+/**
+ * .liveact-video
+ *
+ * LiveAct(R) PRO管理下のvideoタグを指すセレクタです。
+ *
+ * Styleguide 2.2.1
+ */
+.liveact-video {
+  position: absolute;
+}
+
+/**
+ * リンク機能関連
+ *
+ * Styleguide 2.3
+ */
+/**
+ * .liveact-link-highlight
+ *
+ * ハイパーリンクにおいて、
+ * プレーヤーをタップ・クリックしている最中に付与されます。
+ * ハイライト演出に使用します。
+ *
+ * Styleguide 2.3.1
+ */
+.liveact-link-highlight {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/**
+ * フルスクリーン機能関連
+ *
+ * Styleguide 2.4
+ */
+/**
+ * .liveact-fullscreen-background
+ *
+ * CriLaPlayer.fullscreen メソッドにより、
+ * プレーヤーをブラウザ内フルスクリーン化する際に
+ * 背景として使用する要素のセレクタです。
+ *
+ * Styleguide 2.4.1
+ */
+.liveact-fullscreen-background {
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 10000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+/**
+ * .liveact-fullscreen-background .liveact-controls.liveact-controls--audio,
+ * .liveact-fullscreen-background .liveact-controls.liveact-controls--swipe,
+ * .liveact-fullscreen-background .liveact-controls.liveact-controls--no-seekbar
+ *
+ * シークバーとグレーの座布団がなく、
+ * プレーヤー右下にボタンが固まっているタイプのコントロールUIは、
+ * フルスクリーン時にプレーヤー上側に移動します。
+ *
+ * モバイル環境において、フルスクリーン時に
+ * 画面下端のボタンを操作できなくなる現象を回避するためです。
+ *
+ * Styleguide 2.4.2
+ */
+.liveact-fullscreen-background .liveact-controls.liveact-controls--audio,
+.liveact-fullscreen-background .liveact-controls.liveact-controls--swipe,
+.liveact-fullscreen-background .liveact-controls.liveact-controls--no-seekbar {
+  flex-direction: column-reverse;
+}
+
+/**
+ * 3. UIアイコン用フォント
+ *
+ * コントロールUIのボタンで使用するフォントです。
+ * BASE-64形式で埋め込まれています。
+ *
+ * Styleguide 3
+ */
+@font-face {
+  font-family: 'liveact-controls';
+  src: url(data:application/octet-stream;base64,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) format("truetype"), url(data:application/octet-stream;base64,d09GRgABAAAAABOEAAsAAAAAEzgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAABCAAAAGAAAABgDxIGLGNtYXAAAAFoAAAAVAAAAFQXVtKdZ2FzcAAAAbwAAAAIAAAACAAAABBnbHlmAAABxAAADvgAAA74/x4rU2hlYWQAABC8AAAANgAAADYSg2FwaGhlYQAAEPQAAAAkAAAAJAfgA9FobXR4AAARGAAAAGwAAABsYiQDFWxvY2EAABGEAAAAOAAAADgv2DPObWF4cAAAEbwAAAAgAAAAIAAjAHpuYW1lAAAR3AAAAYYAAAGGmUoJ+3Bvc3QAABNkAAAAIAAAACAAAwAAAAMD7AGQAAUAAAKZAswAAACPApkCzAAAAesAMwEJAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAQAAA6RYDwP/AAEADwABAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAwAAAAMAAAAcAAEAAwAAABwAAwABAAAAHAAEADgAAAAKAAgAAgACAAEAIOkW//3//wAAAAAAIOkA//3//wAB/+MXBAADAAEAAAAAAAAAAAAAAAEAAf//AA8AAQAAAAAAAAAAAAIAADc5AQAAAAABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAgCAAEADgANAAA8AHwAAEzMyFhURFAYrASImNRE0NiEzMhYVERQGKwEiJjURNDaw4BMdHRPgEx0dAdPgEx0dE+ATHR0DQB0T/WATHR0TAqATHR0T/WATHR0TAqATHQAAAQDAAG0C9gMTAAwAAAkBFhQHAQYmNRE0NhcBDQHpGBj+FxsyMhsDE/7aDzkP/tcPHx0CTB0fDwACAAAAAAPAA34ADwAqAAABFSMnByM1Nyc1Mxc3MxUHASImLwEjIiY1ETQ2OwE3PgEXHgEVERQGBw4BA8BVa2tVa2tVa2tVa/5LBgwF9nMNExMNc/YHEwkJCwsJAwYBVVVra1Vra1Vra1Vr/kAFBPcTDQFADRP3BgQDBBAK/MAKEAQBAQADAAAAAANwA34AJQBDAF4AACUiJicmNDc2NzY0JyYnJjQ3PgEXFhceARcWFRQHDgEHBgcOASMxJyImJyY0NzY3NjQnJicmNDc2MhcWFxYUBwYHDgEjByImLwEjIiY1ETQ2OwE3PgEXHgEVERQGBw4BAtAKEQcODjEYGRkYMQ4ODicOHxgXIAkICAkgFxgfBxEKqgkSBw4OHhAPDxAeDg4OKA4sFxYWFywHEgmFBgwF9nMNExMNc/YHEwkJCwsJAwaABwgOJw4yPT6CPT4yDicODgEPHiMkTSoqKysqKk0kIx8HB1sHBw4oDh4nJlAmJx4OKA4ODi04OHQ4OSwHB9sFBPcTDQFADRP3BgQDBBAK/MAKEAQBAQAAAgAAAMAEAALAAA8ALAAAATEyFhURFAYjMSImNRE0NgEhIiY9ATQ2MyEyNj0BNDYfARYUDwEGJj0BNCYjA+AOEhIODhIS/tH9egwREQwCgwwRJQ6WCgqWDCQRDALAEg7+QA4SEg4BwA4S/sARDEMOEhEMORQRDpcJGQeXEA4WOQwRAAAAAgAA/+YEAAOaACQASQAAEyEyFh0BFBY/ATY0LwEmBh0BFAYjISIGFREUFjsBMjY9ATQ2MwEhIiY9ATQmDwEGFB8BFjY9ATQ2MyEyNjURNCYrASIGHQEUBiOtAiYTGh0Jug4OugkdGhP9WhMaGhMmExoaEwKm/doTGh0Jug4OugkdGhMCphMaGhMmExoaEwKAGhNdDgsJug4kDroJCw5dExoaE/7aExoaE6YTGv6AGhNdDgsJug4kDroJCw5dExoaEwEmExoaE6YTGgAABAB8ACADoANIABkAMwBNAGcAAAEnNz4BJy4BLwEiBgcOARUXFBYXFjY/ARc3NxcHFzcXHgE3PgE/ATQmJy4BIwciBgcGFhcBJzcnBycuAQcOAQ8BFBYXHgEzNzI2NzYmJwUnNCYnJgYPAScHFwcOARceAR8BMjY3PgE1AcyGJggCAwIGBtUFCQMCAQ0FAgUPCDOGZ9wtf2qAMAcPBQMBAw4CBQMJBdUFBgMFAQf+yzCUa5QsCA8FAgIDDQEGAgoF1QUGAwUBCAItDgQDBQ8HJpBrkDMIAgMDBgXVBQkDBQICbIYmBw8FAwEDDgIFAwkF1QYGAgUECDOGa6wtf2t/MAcCAgMGBdUFCgIDBA0FAgMOB/04MJRrlC0HAgMCBgXVBQoCAwQNBQIDDgcU1QUGAgYFByqRa5A0Bw8FAwEDDgIFBQsFAAAAAAQAawAkA6ADYAAZADMATQBmAAAlJzc+AScuAS8BIgYHDgEVFxQWFxY2PwEXNyUXBxc3Fx4BNz4BPwE0JicuASMHIgYHBhYXJSc3JwcnLgEHDgEPARQWFx4BMzcyNjc2JicFJzQmJyYGDwEnBxcHDgEXHgEfATI2Nz4BA6CGJgcCAwIGBdUGCQMCBA0FAgUPCDOGa/0kLYBrfzAIDwUCAgMNAQYCCgXVBQYDBwMIAnwxkWuTKgcPBQMCAg4CBQMJBdUFBgMFAQf+ew0FAgUPCCmNapA0BwICAwYF1QUKAgMEjoYmCA4FAwICDgIFAgoF1QUGAwUECDSGaqwtf2p/MAgCAwIGBtUFCQMCBQ4EAwMNCPQwlGqTKQgBAgMGBdUFCgIDBA4EAgYOCBHVBQYDBQUHKpFrkDQHDwUDAQMOAgUFCwAAAAMADv/RA/IDsgAbADcARAAABSInLgEnJjU0Nz4BNzYzMhceARcWFRQHDgEHBgMiBw4BBwYVFBceARcWMzI3PgE3NjU0Jy4BJyYDNSM1MzUzFTMVIxUjAgBnW1uHJycnJ4dbW2dnW1uHJycnJ4dbW2dZTk51IiIiInVOTllZTk51IiIiInVOTqWrr4avr4ovJyiHW1pnaFpahicmJyeHW1tnZ1pahyYnA50iInVOTllZTk10ISEiIXVOT1hZTk5zISL9VMB/sLN/wQAAAAIALf/tA8wDjAAcACkAAAEiBw4BBwYVFBceARcWMzI3PgE3NjU0Jy4BJyYjEyMVIzUjNTM1MxUzFQH9YFRVfiUkJCR+VFVhX1RVfiUkJCV+VVRf7bCGr6+GsAOMJCR+VFVgYFRVfiUkJCR+VFVhYFVUfiQk/fbAwH+ws3wAAAAAAwAO/9ED8gOyABsANwA7AAAFIicuAScmNTQ3PgE3NjMyFx4BFxYVFAcOAQcGAyIHDgEHBhUUFx4BFxYzMjc+ATc2NTQnLgEnJgE1IRUCAGdbW4cnJycnh1tbZ2dbW4cnJycnh1tbZ1lOTnUiIiIidU5OWVlOTnUiIiIidU5O/qkB6y8nKIdbWmdoWlqGJyYnJ4dbW2dnWlqHJicDnSIidU5OWVlOTXQhISIhdU5PWFlOTnMhIv4NhoYAAAACAC3/7QPMA4wAHAAgAAABIgcOAQcGFRQXHgEXFjMyNz4BNzY1JicuAScmIxMhNSEB/WBUVX4lJCQkflRVYWBVVH4kJAElJX1UVF/6/hUB6wOMJCR+VFVgYFRVfiUkJCR+VFVhYFVUfiQk/eyGAAAAAQAHAEMEAAMiAE0AAAE3MDYfATAWBwUwJj8BMCcmBgcGBwYWMTAXHgEXFjcnMCYXFhceARcWMTAWBwMwBi8BMAcOAQcGJyYnLgEnJjc2Nz4BNzY3Mjc+ARcWFwKzJRMQjQoK/uMbAjElJG1BQDlxNhcWa1lZhjoDFAo5OX80MyQFUgwhchcWVjw8S09SU4QpKAcGJCRmOzs0Ah0eXjs7PQLuMBENdQkIPgMSOgUFAw0NJEh/GhozDAwbWh4DAQ0MHQwMCxf+9xMQiQwMGwoJBQYZGFI3OEREMzNHFRUJBQUHAQEMAAAAAAEAA//HA/0DuQBgAAABJy4BIyIGHQEhNTMyNjU0Ji8BLgEjIgYPAQ4BFRQWOwEVIzU0JiMiBg8BDgEVFBYfAR4BMzI2PQEhESMiBhUUFh8BHgEzMjY/AT4BNTQmKwERIRUUFjMyNj8BPgE1LgEnA++RAgkCBQn++zoLCgIFfwMIAwIJA38CBQsKOv4IBgIGBZECBQUClAMIAwUJAQE3CgoBBn8CCQIDCQJ/AwQKCj4BBQgGAgYFkQIFBgYCAdF/AwQKCjT3CQUDBgWQAwQEA5ADCAMFCfozCgsCBX8DCAMDCAN/AgULCkH++AkFAwYFkAMEBAOQAwgDBQkBCEEKCwIFfwMIAwUKAgAAAAAHACQAJQPuAzMAEQAgADMARgBiAG0AdwAAAQc3Jz4BJy4BIxcyFhcWBgcnBS4BJyY2NycOARceARcnNz4BNyclFx4BFycuAQcFDgEfAQEnDgEHFwUnLgEnFx4BNyU+AScDIgcOAQcGFRQXHgEXFjMyNz4BNzY1NCcuAScmBzIWFwcuATUmNjMRIiYnJR4BFQ4BA0FI9UEYGAgOfG8HRGUIAxIVL/3RWUYKC0ZRB8ANAxCJXAcLCBIOCwFIEhAXCxkFPSP++RshBhIB2BIFEAsH/rgPEBsLFgU9IwEHGx4D+SwoJzsREREROycoLC0nKDsREREROygnLR41FvwJCQNiRiM+FgEAERADYAHoo3cPHi4ZNi86EyMQIBgL4AggIBtWIz1chA4zMgM9+RAgDUhlkA0cEdEkKAtPCDEdjf7KiRMhEUFlbQobDaIjKQtPCzEbAakRETsnJy0tJyc7ERERETsnJy0uJyg6ERAvExHUEyYWRmP+sRoZ2BYwG0djAAAEACQAJQPuAzMADwAUACYANQAAJQMuAQcFDgEXEx4BNyU+AQUDJRMFAQc3Jz4BJy4BIxcyFhcWBgcnBS4BJyY2NycOARceARcnAvVIBT0j/vkbIQZIBT0jAQcbHv6KSAFISP64Ab9I9UEYGAgOfG8HRGUIAxIVL/3RWUYKC0ZRB8ANAxCJXAfLAickKAtPCDEd/dgjKQtPCzFHAh1l/eNlAX+jdw8eLhk2LzoTIxAgGAvgCCAgG1YjPVyEDjMyAz0AAAAABAAmAQ0D3gKAAAMACAANABIAAAEzESMBMxEjEQUhJxchFyE3ByEDozs7/IM6OgFiAjf4BP69/v3J9wMBQwKA/o0Bc/6NAXP6qGREqGQAAAAFAAD/0wQNA6AAAwAGAAoADQASAAATMxEjAyEDBTMRIwMhAwEhFSE1rW1trQHN5wIHbW2tAc3n/hQBk/5tAob9TQPN/voU/U0Dzf76/pmAgAAAAAABAAAAjQQdAuUAAwAAEyEJAQAEHf3y/fEC5f2oAlgAAAEAAP/ABBIDwAAMAAAJAQcJAScJATcJARcBAnUBnWz+Y/5jbAGd/mNsAZ0Bi2z+dQG3/mNaAYv+dWwBnQGLbP5jAZ1s/mMAAAIAAP/ABAkDwAACAAYAABMBEQUjETMAApUBdMTEAcAB9fwWCwQAAAACAAD/wAQJA8AAAgAGAAAFEQEBMxEjAXQClfv3xMQ1A+r+CwIA/AAAAQAA/70EAQPAADMAAAEnLgEjIgYHMQ4BFxYGDwEOAQcrASIGHwEPAT8BFxY2PQE+ATcxNz4BFxY2Nz4BNTQmJyMD2eQPKxkUJA4cDxERFyJPKGg5AXIwFCKm4TKA4KYiNAMrI08iSRIRQhwMDRUSAQK15BIVDQwcQBMTSCJRJCsDMSSj4IMx5aYiFDB0OmYoTyIXEREPHA4kExksDwAAAAEAAAAAAABniFO1Xw889QALBAAAAAAA16QOewAAAADXpA57AAD/vQQdA8AAAAAIAAIAAAAAAAAAAQAAA8D/wAAABBIAAP/jBB0AAQAAAAAAAAAAAAAAAAAAABsEAAAAAAAAAAAAAAACAAAABAAAgAQAAMAEAAAABAAAAAQAAAAEAAAABAAAfAQAAGsEAAAOBAAALQQAAA4EAAAtBAAABwQAAAMEAAAkBAAAJAQAACYEAAAABAAAAAQSAAAECQAABAkAAAQAAAAAAAAAAAoAFAAeAE4AagCsATgBegHgAoQDJgOMA8wEKgRiBNYFXAYcBn4GpgbQBuAHBAcYBywHfAABAAAAGwB4AAcAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAADgCuAAEAAAAAAAEABwAAAAEAAAAAAAIABwBgAAEAAAAAAAMABwA2AAEAAAAAAAQABwB1AAEAAAAAAAUACwAVAAEAAAAAAAYABwBLAAEAAAAAAAoAGgCKAAMAAQQJAAEADgAHAAMAAQQJAAIADgBnAAMAAQQJAAMADgA9AAMAAQQJAAQADgB8AAMAAQQJAAUAFgAgAAMAAQQJAAYADgBSAAMAAQQJAAoANACkaWNvbW9vbgBpAGMAbwBtAG8AbwBuVmVyc2lvbiAxLjAAVgBlAHIAcwBpAG8AbgAgADEALgAwaWNvbW9vbgBpAGMAbwBtAG8AbwBuaWNvbW9vbgBpAGMAbwBtAG8AbwBuUmVndWxhcgBSAGUAZwB1AGwAYQByaWNvbW9vbgBpAGMAbwBtAG8AbwBuRm9udCBnZW5lcmF0ZWQgYnkgSWNvTW9vbi4ARgBvAG4AdAAgAGcAZQBuAGUAcgBhAHQAZQBkACAAYgB5ACAASQBjAG8ATQBvAG8AbgAuAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==) format("woff");
+}
+/* Magnific Popup CSS */
+.mfp-bg {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1042;
+  overflow: hidden;
+  position: fixed;
+  background: #0b0b0b;
+  opacity: 0.8;
+}
+
+.mfp-wrap {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1043;
+  position: fixed;
+  outline: none !important;
+  -webkit-backface-visibility: hidden;
+}
+
+.mfp-container {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+
+.mfp-container:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.mfp-align-top .mfp-container:before {
+  display: none;
+}
+
+.mfp-content {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 auto;
+  text-align: left;
+  z-index: 1045;
+}
+
+.mfp-inline-holder .mfp-content,
+.mfp-ajax-holder .mfp-content {
+  width: 100%;
+  cursor: auto;
+}
+
+.mfp-ajax-cur {
+  cursor: progress;
+}
+
+.mfp-zoom-out-cur, .mfp-zoom-out-cur .mfp-image-holder .mfp-close {
+  cursor: -moz-zoom-out;
+  cursor: -webkit-zoom-out;
+  cursor: zoom-out;
+}
+
+.mfp-zoom {
+  cursor: pointer;
+  cursor: -webkit-zoom-in;
+  cursor: -moz-zoom-in;
+  cursor: zoom-in;
+}
+
+.mfp-auto-cursor .mfp-content {
+  cursor: auto;
+}
+
+.mfp-close,
+.mfp-arrow,
+.mfp-preloader,
+.mfp-counter {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.mfp-loading.mfp-figure {
+  display: none;
+}
+
+.mfp-hide {
+  display: none !important;
+}
+
+.mfp-preloader {
+  color: #CCC;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  text-align: center;
+  margin-top: -0.8em;
+  left: 8px;
+  right: 8px;
+  z-index: 1044;
+}
+
+.mfp-preloader a {
+  color: #CCC;
+}
+
+.mfp-preloader a:hover {
+  color: #FFF;
+}
+
+.mfp-s-ready .mfp-preloader {
+  display: none;
+}
+
+.mfp-s-error .mfp-content {
+  display: none;
+}
+
+button.mfp-close,
+button.mfp-arrow {
+  overflow: visible;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+  display: block;
+  outline: none;
+  padding: 0;
+  z-index: 1046;
+  box-shadow: none;
+  touch-action: manipulation;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+.mfp-close {
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-decoration: none;
+  text-align: center;
+  opacity: 0.65;
+  padding: 0 0 18px 10px;
+  color: #FFF;
+  font-style: normal;
+  font-size: 28px;
+  font-family: Arial, Baskerville, monospace;
+}
+
+.mfp-close:hover,
+.mfp-close:focus {
+  opacity: 1;
+}
+
+.mfp-close:active {
+  top: 1px;
+}
+
+.mfp-close-btn-in .mfp-close {
+  color: #333;
+}
+
+.mfp-image-holder .mfp-close,
+.mfp-iframe-holder .mfp-close {
+  color: #FFF;
+  right: -6px;
+  text-align: right;
+  padding-right: 6px;
+  width: 100%;
+}
+
+.mfp-counter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #CCC;
+  font-size: 12px;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+.mfp-arrow {
+  position: absolute;
+  opacity: 0.65;
+  margin: 0;
+  top: 50%;
+  margin-top: -55px;
+  padding: 0;
+  width: 90px;
+  height: 110px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mfp-arrow:active {
+  margin-top: -54px;
+}
+
+.mfp-arrow:hover,
+.mfp-arrow:focus {
+  opacity: 1;
+}
+
+.mfp-arrow:before,
+.mfp-arrow:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: 35px;
+  margin-left: 35px;
+  border: medium inset transparent;
+}
+
+.mfp-arrow:after {
+  border-top-width: 13px;
+  border-bottom-width: 13px;
+  top: 8px;
+}
+
+.mfp-arrow:before {
+  border-top-width: 21px;
+  border-bottom-width: 21px;
+  opacity: 0.7;
+}
+
+.mfp-arrow-left {
+  left: 0;
+}
+
+.mfp-arrow-left:after {
+  border-right: 17px solid #FFF;
+  margin-left: 31px;
+}
+
+.mfp-arrow-left:before {
+  margin-left: 25px;
+  border-right: 27px solid #3F3F3F;
+}
+
+.mfp-arrow-right {
+  right: 0;
+}
+
+.mfp-arrow-right:after {
+  border-left: 17px solid #FFF;
+  margin-left: 39px;
+}
+
+.mfp-arrow-right:before {
+  border-left: 27px solid #3F3F3F;
+}
+
+.mfp-iframe-holder {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.mfp-iframe-holder .mfp-content {
+  line-height: 0;
+  width: 100%;
+  max-width: 900px;
+}
+
+.mfp-iframe-holder .mfp-close {
+  top: -40px;
+}
+
+.mfp-iframe-scaler {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+
+.mfp-iframe-scaler iframe {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+  background: #000;
+}
+
+/* Main image in popup */
+img.mfp-img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  line-height: 0;
+  box-sizing: border-box;
+  padding: 40px 0 40px;
+  margin: 0 auto;
+}
+
+/* The shadow behind the image */
+.mfp-figure {
+  line-height: 0;
+}
+
+.mfp-figure:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 40px;
+  bottom: 40px;
+  display: block;
+  right: 0;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+  background: #444;
+}
+
+.mfp-figure small {
+  color: #BDBDBD;
+  display: block;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.mfp-figure figure {
+  margin: 0;
+}
+
+.mfp-bottom-bar {
+  margin-top: -36px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  cursor: auto;
+}
+
+.mfp-title {
+  text-align: left;
+  line-height: 18px;
+  color: #F3F3F3;
+  word-wrap: break-word;
+  padding-right: 36px;
+}
+
+.mfp-image-holder .mfp-content {
+  max-width: 100%;
+}
+
+.mfp-gallery .mfp-image-holder .mfp-figure {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px) and (orientation: landscape), screen and (max-height: 300px) {
+  /**
+       * Remove all paddings around the image on small screen
+       */
+  .mfp-img-mobile .mfp-image-holder {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .mfp-img-mobile img.mfp-img {
+    padding: 0;
+  }
+
+  .mfp-img-mobile .mfp-figure:after {
+    top: 0;
+    bottom: 0;
+  }
+
+  .mfp-img-mobile .mfp-figure small {
+    display: inline;
+    margin-left: 5px;
+  }
+
+  .mfp-img-mobile .mfp-bottom-bar {
+    background: rgba(0, 0, 0, 0.6);
+    bottom: 0;
+    margin: 0;
+    top: auto;
+    padding: 3px 5px;
+    position: fixed;
+    box-sizing: border-box;
+  }
+
+  .mfp-img-mobile .mfp-bottom-bar:empty {
+    padding: 0;
+  }
+
+  .mfp-img-mobile .mfp-counter {
+    right: 5px;
+    top: 3px;
+  }
+
+  .mfp-img-mobile .mfp-close {
+    top: 0;
+    right: 0;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    text-align: center;
+    padding: 0;
+  }
+}
+@media all and (max-width: 900px) {
+  .mfp-arrow {
+    -webkit-transform: scale(0.75);
+    transform: scale(0.75);
+  }
+
+  .mfp-arrow-left {
+    -webkit-transform-origin: 0;
+    transform-origin: 0;
+  }
+
+  .mfp-arrow-right {
+    -webkit-transform-origin: 100%;
+    transform-origin: 100%;
+  }
+
+  .mfp-container {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+.fancybox-active {
+    height: auto;
+}
+
+.fancybox-is-hidden {
+    left: -9999px;
+    margin: 0;
+    position: absolute !important;
+    top: -9999px;
+    visibility: hidden;
+}
+
+.fancybox-container {
+    -webkit-backface-visibility: hidden;
+    height: 100%;
+    left: 0;
+    outline: none;
+    position: fixed;
+    -webkit-tap-highlight-color: transparent;
+    top: 0;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    width: 100%;
+    z-index: 99992;
+}
+
+.fancybox-container * {
+    box-sizing: border-box;
+}
+
+.fancybox-outer,
+.fancybox-inner,
+.fancybox-bg,
+.fancybox-stage {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.fancybox-outer {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+}
+
+.fancybox-bg {
+    background: rgb(30, 30, 30);
+    opacity: 0;
+    transition-duration: inherit;
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(.47, 0, .74, .71);
+}
+
+.fancybox-is-open .fancybox-bg {
+    opacity: .9;
+    transition-timing-function: cubic-bezier(.22, .61, .36, 1);
+}
+
+.fancybox-infobar,
+.fancybox-toolbar,
+.fancybox-caption,
+.fancybox-navigation .fancybox-button {
+    direction: ltr;
+    opacity: 0;
+    position: absolute;
+    transition: opacity .25s ease, visibility 0s ease .25s;
+    visibility: hidden;
+    z-index: 99997;
+}
+
+.fancybox-show-infobar .fancybox-infobar,
+.fancybox-show-toolbar .fancybox-toolbar,
+.fancybox-show-caption .fancybox-caption,
+.fancybox-show-nav .fancybox-navigation .fancybox-button {
+    opacity: 1;
+    transition: opacity .25s ease 0s, visibility 0s ease 0s;
+    visibility: visible;
+}
+
+.fancybox-infobar {
+    color: #ccc;
+    font-size: 13px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    height: 44px;
+    left: 0;
+    line-height: 44px;
+    min-width: 44px;
+    mix-blend-mode: difference;
+    padding: 0 10px;
+    pointer-events: none;
+    top: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.fancybox-toolbar {
+    right: 0;
+    top: 0;
+}
+
+.fancybox-stage {
+    direction: ltr;
+    overflow: visible;
+    transform: translateZ(0);
+    z-index: 99994;
+}
+
+.fancybox-is-open .fancybox-stage {
+    overflow: hidden;
+}
+
+.fancybox-slide {
+    -webkit-backface-visibility: hidden;
+    /* Using without prefix would break IE11 */
+    display: none;
+    height: 100%;
+    left: 0;
+    outline: none;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 44px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    transition-property: transform, opacity;
+    white-space: normal;
+    width: 100%;
+    z-index: 99994;
+}
+
+.fancybox-slide::before {
+    content: '';
+    display: inline-block;
+    font-size: 0;
+    height: 100%;
+    vertical-align: middle;
+    width: 0;
+}
+
+.fancybox-is-sliding .fancybox-slide,
+.fancybox-slide--previous,
+.fancybox-slide--current,
+.fancybox-slide--next {
+    display: block;
+}
+
+.fancybox-slide--image {
+    overflow: hidden;
+    padding: 44px 0;
+}
+
+.fancybox-slide--image::before {
+    display: none;
+}
+
+.fancybox-slide--html {
+    padding: 6px;
+}
+
+.fancybox-content {
+    background: #fff;
+    display: inline-block;
+    margin: 0;
+    max-width: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 44px;
+    position: relative;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.fancybox-slide--image .fancybox-content {
+    animation-timing-function: cubic-bezier(.5, 0, .14, 1);
+    -webkit-backface-visibility: hidden;
+    background: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    left: 0;
+    max-width: none;
+    overflow: visible;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    transition-property: transform, opacity;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    z-index: 99995;
+}
+
+.fancybox-can-zoomOut .fancybox-content {
+    cursor: zoom-out;
+}
+
+.fancybox-can-zoomIn .fancybox-content {
+    cursor: zoom-in;
+}
+
+.fancybox-can-swipe .fancybox-content,
+.fancybox-can-pan .fancybox-content {
+    cursor: -webkit-grab;
+    cursor: grab;
+}
+
+.fancybox-is-grabbing .fancybox-content {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+}
+
+.fancybox-container [data-selectable='true'] {
+    cursor: text;
+}
+
+.fancybox-image,
+.fancybox-spaceball {
+    background: transparent;
+    border: 0;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    max-height: none;
+    max-width: none;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 100%;
+}
+
+.fancybox-spaceball {
+    z-index: 1;
+}
+
+.fancybox-slide--video .fancybox-content,
+.fancybox-slide--map .fancybox-content,
+.fancybox-slide--pdf .fancybox-content,
+.fancybox-slide--iframe .fancybox-content {
+    height: 100%;
+    overflow: visible;
+    padding: 0;
+    width: 100%;
+}
+
+.fancybox-slide--video .fancybox-content {
+    background: #000;
+}
+
+.fancybox-slide--map .fancybox-content {
+    background: #e5e3df;
+}
+
+.fancybox-slide--iframe .fancybox-content {
+    background: #fff;
+}
+
+.fancybox-video,
+.fancybox-iframe {
+    background: transparent;
+    border: 0;
+    display: block;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+}
+
+/* Fix iOS */
+.fancybox-iframe {
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+.fancybox-error {
+    background: #fff;
+    cursor: default;
+    max-width: 400px;
+    padding: 40px;
+    width: 100%;
+}
+
+.fancybox-error p {
+    color: #444;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Buttons */
+
+.fancybox-button {
+    background: rgba(30, 30, 30, .6);
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    cursor: pointer;
+    display: inline-block;
+    height: 44px;
+    margin: 0;
+    padding: 10px;
+    position: relative;
+    transition: color .2s;
+    vertical-align: top;
+    visibility: inherit;
+    width: 44px;
+}
+
+.fancybox-button,
+.fancybox-button:visited,
+.fancybox-button:link {
+    color: #ccc;
+}
+
+.fancybox-button:hover {
+    color: #fff;
+}
+
+.fancybox-button:focus {
+    outline: none;
+}
+
+.fancybox-button.fancybox-focus {
+    outline: 1px dotted;
+}
+
+.fancybox-button[disabled],
+.fancybox-button[disabled]:hover {
+    color: #888;
+    cursor: default;
+    outline: none;
+}
+
+/* Fix IE11 */
+.fancybox-button div {
+    height: 100%;
+}
+
+.fancybox-button svg {
+    display: block;
+    height: 100%;
+    overflow: visible;
+    position: relative;
+    width: 100%;
+}
+
+.fancybox-button svg path {
+    fill: currentColor;
+    stroke-width: 0;
+}
+
+.fancybox-button--play svg:nth-child(2),
+.fancybox-button--fsenter svg:nth-child(2) {
+    display: none;
+}
+
+.fancybox-button--pause svg:nth-child(1),
+.fancybox-button--fsexit svg:nth-child(1) {
+    display: none;
+}
+
+.fancybox-progress {
+    background: #ff5268;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    -ms-transform: scaleX(0);
+    transform: scaleX(0);
+    -ms-transform-origin: 0;
+    transform-origin: 0;
+    transition-property: transform;
+    transition-timing-function: linear;
+    z-index: 99998;
+}
+
+/* Close button on the top right corner of html content */
+
+.fancybox-close-small {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    color: #ccc;
+    cursor: pointer;
+    opacity: .8;
+    padding: 8px;
+    position: absolute;
+    right: -12px;
+    top: -44px;
+    z-index: 401;
+}
+
+.fancybox-close-small:hover {
+    color: #fff;
+    opacity: 1;
+}
+
+.fancybox-slide--html .fancybox-close-small {
+    color: currentColor;
+    padding: 10px;
+    right: 0;
+    top: 0;
+}
+
+.fancybox-slide--image.fancybox-is-scaling .fancybox-content {
+    overflow: hidden;
+}
+
+.fancybox-is-scaling .fancybox-close-small,
+.fancybox-is-zoomable.fancybox-can-pan .fancybox-close-small {
+    display: none;
+}
+
+/* Navigation arrows */
+
+.fancybox-navigation .fancybox-button {
+    background-clip: content-box;
+    height: 100px;
+    opacity: 0;
+    position: absolute;
+    top: calc(50% - 50px);
+    width: 70px;
+}
+
+.fancybox-navigation .fancybox-button div {
+    padding: 7px;
+}
+
+.fancybox-navigation .fancybox-button--arrow_left {
+    left: 0;
+    left: env(safe-area-inset-left);
+    padding: 31px 26px 31px 6px;
+}
+
+.fancybox-navigation .fancybox-button--arrow_right {
+    padding: 31px 6px 31px 26px;
+    right: 0;
+    right: env(safe-area-inset-right);
+}
+
+/* Caption */
+
+.fancybox-caption {
+    background: linear-gradient(to top,
+        rgba(0, 0, 0, .85) 0%,
+        rgba(0, 0, 0, .3) 50%,
+        rgba(0, 0, 0, .15) 65%,
+        rgba(0, 0, 0, .075) 75.5%,
+        rgba(0, 0, 0, .037) 82.85%,
+        rgba(0, 0, 0, .019) 88%,
+        rgba(0, 0, 0, 0) 100%);
+    bottom: 0;
+    color: #eee;
+    font-size: 14px;
+    font-weight: 400;
+    left: 0;
+    line-height: 1.5;
+    padding: 75px 44px 25px 44px;
+    pointer-events: none;
+    right: 0;
+    text-align: center;
+    z-index: 99996;
+}
+
+@supports (padding: max(0px)) {
+    .fancybox-caption {
+        padding: 75px max(44px, env(safe-area-inset-right)) max(25px, env(safe-area-inset-bottom)) max(44px, env(safe-area-inset-left));
+    }
+}
+
+.fancybox-caption--separate {
+    margin-top: -50px;
+}
+
+.fancybox-caption__body {
+    max-height: 50vh;
+    overflow: auto;
+    pointer-events: all;
+}
+
+.fancybox-caption a,
+.fancybox-caption a:link,
+.fancybox-caption a:visited {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.fancybox-caption a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Loading indicator */
+
+.fancybox-loading {
+    animation: fancybox-rotate 1s linear infinite;
+    background: transparent;
+    border: 4px solid #888;
+    border-bottom-color: #fff;
+    border-radius: 50%;
+    height: 50px;
+    left: 50%;
+    margin: -25px 0 0 -25px;
+    opacity: .7;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    z-index: 99999;
+}
+
+@keyframes fancybox-rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Transition effects */
+
+.fancybox-animated {
+    transition-timing-function: cubic-bezier(0, 0, .25, 1);
+}
+
+/* transitionEffect: slide */
+
+.fancybox-fx-slide.fancybox-slide--previous {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+}
+
+.fancybox-fx-slide.fancybox-slide--next {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+}
+
+.fancybox-fx-slide.fancybox-slide--current {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+/* transitionEffect: fade */
+
+.fancybox-fx-fade.fancybox-slide--previous,
+.fancybox-fx-fade.fancybox-slide--next {
+    opacity: 0;
+    transition-timing-function: cubic-bezier(.19, 1, .22, 1);
+}
+
+.fancybox-fx-fade.fancybox-slide--current {
+    opacity: 1;
+}
+
+/* transitionEffect: zoom-in-out */
+
+.fancybox-fx-zoom-in-out.fancybox-slide--previous {
+    opacity: 0;
+    transform: scale3d(1.5, 1.5, 1.5);
+}
+
+.fancybox-fx-zoom-in-out.fancybox-slide--next {
+    opacity: 0;
+    transform: scale3d(.5, .5, .5);
+}
+
+.fancybox-fx-zoom-in-out.fancybox-slide--current {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+}
+
+/* transitionEffect: rotate */
+
+.fancybox-fx-rotate.fancybox-slide--previous {
+    opacity: 0;
+    -ms-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+}
+
+.fancybox-fx-rotate.fancybox-slide--next {
+    opacity: 0;
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.fancybox-fx-rotate.fancybox-slide--current {
+    opacity: 1;
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+/* transitionEffect: circular */
+
+.fancybox-fx-circular.fancybox-slide--previous {
+    opacity: 0;
+    transform: scale3d(0, 0, 0) translate3d(-100%, 0, 0);
+}
+
+.fancybox-fx-circular.fancybox-slide--next {
+    opacity: 0;
+    transform: scale3d(0, 0, 0) translate3d(100%, 0, 0);
+}
+
+.fancybox-fx-circular.fancybox-slide--current {
+    opacity: 1;
+    transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+}
+
+/* transitionEffect: tube */
+
+.fancybox-fx-tube.fancybox-slide--previous {
+    transform: translate3d(-100%, 0, 0) scale(.1) skew(-10deg);
+}
+
+.fancybox-fx-tube.fancybox-slide--next {
+    transform: translate3d(100%, 0, 0) scale(.1) skew(10deg);
+}
+
+.fancybox-fx-tube.fancybox-slide--current {
+    transform: translate3d(0, 0, 0) scale(1);
+}
+
+/* Styling for Small-Screen Devices */
+@media all and (max-height: 576px) {
+    .fancybox-slide {
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+    .fancybox-slide--image {
+        padding: 6px 0;
+    }
+
+    .fancybox-close-small {
+        right: -6px;
+    }
+
+    .fancybox-slide--image .fancybox-close-small {
+        background: #4e4e4e;
+        color: #f2f4f6;
+        height: 36px;
+        opacity: 1;
+        padding: 6px;
+        right: 0;
+        top: 0;
+        width: 36px;
+    }
+
+    .fancybox-caption {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    @supports (padding: max(0px)) {
+        .fancybox-caption {
+            padding-left: max(12px, env(safe-area-inset-left));
+            padding-right: max(12px, env(safe-area-inset-right));
+        }
+    }
+}
+/* Share */
+
+.fancybox-share {
+    background: #f4f4f4;
+    border-radius: 3px;
+    max-width: 90%;
+    padding: 30px;
+    text-align: center;
+}
+
+.fancybox-share h1 {
+    color: #222;
+    font-size: 35px;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+}
+
+.fancybox-share p {
+    margin: 0;
+    padding: 0;
+}
+
+.fancybox-share__button {
+    border: 0;
+    border-radius: 3px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 40px;
+    margin: 0 5px 10px 5px;
+    min-width: 130px;
+    padding: 0 15px;
+    text-decoration: none;
+    transition: all .2s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.fancybox-share__button:visited,
+.fancybox-share__button:link {
+    color: #fff;
+}
+
+.fancybox-share__button:hover {
+    text-decoration: none;
+}
+
+.fancybox-share__button--fb {
+    background: #3b5998;
+}
+
+.fancybox-share__button--fb:hover {
+    background: #344e86;
+}
+
+.fancybox-share__button--pt {
+    background: #bd081d;
+}
+
+.fancybox-share__button--pt:hover {
+    background: #aa0719;
+}
+
+.fancybox-share__button--tw {
+    background: #1da1f2;
+}
+
+.fancybox-share__button--tw:hover {
+    background: #0d95e8;
+}
+
+.fancybox-share__button svg {
+    height: 25px;
+    margin-right: 7px;
+    position: relative;
+    top: -1px;
+    vertical-align: middle;
+    width: 25px;
+}
+
+.fancybox-share__button svg path {
+    fill: #fff;
+}
+
+.fancybox-share__input {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #d7d7d7;
+    border-radius: 0;
+    color: #5d5b5b;
+    font-size: 14px;
+    margin: 10px 0 0 0;
+    outline: none;
+    padding: 10px 15px;
+    width: 100%;
+}
+/* Thumbs */
+
+.fancybox-thumbs {
+    background: #ddd;
+    bottom: 0;
+    display: none;
+    margin: 0;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    padding: 2px 2px 4px 2px;
+    position: absolute;
+    right: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    top: 0;
+    width: 212px;
+    z-index: 99995;
+}
+
+.fancybox-thumbs-x {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.fancybox-show-thumbs .fancybox-thumbs {
+    display: block;
+}
+
+.fancybox-show-thumbs .fancybox-inner {
+    right: 212px;
+}
+
+.fancybox-thumbs__list {
+    font-size: 0;
+    height: 100%;
+    list-style: none;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+    position: absolute;
+    position: relative;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.fancybox-thumbs-x .fancybox-thumbs__list {
+    overflow: hidden;
+}
+
+.fancybox-thumbs-y .fancybox-thumbs__list::-webkit-scrollbar {
+    width: 7px;
+}
+
+.fancybox-thumbs-y .fancybox-thumbs__list::-webkit-scrollbar-track {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+}
+
+.fancybox-thumbs-y .fancybox-thumbs__list::-webkit-scrollbar-thumb {
+    background: #2a2a2a;
+    border-radius: 10px;
+}
+
+.fancybox-thumbs__list a {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-color: rgba(0, 0, 0, .1);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    float: left;
+    height: 75px;
+    margin: 2px;
+    max-height: calc(100% - 8px);
+    max-width: calc(50% - 4px);
+    outline: none;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+    width: 100px;
+}
+
+.fancybox-thumbs__list a::before {
+    border: 6px solid #ff5268;
+    bottom: 0;
+    content: '';
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all .2s cubic-bezier(.25, .46, .45, .94);
+    z-index: 99991;
+}
+
+.fancybox-thumbs__list a:focus::before {
+    opacity: .5;
+}
+
+.fancybox-thumbs__list a.fancybox-thumbs-active::before {
+    opacity: 1;
+}
+
+/* Styling for Small-Screen Devices */
+@media all and (max-width: 576px) {
+    .fancybox-thumbs {
+        width: 110px;
+    }
+
+    .fancybox-show-thumbs .fancybox-inner {
+        right: 110px;
+    }
+
+    .fancybox-thumbs__list a {
+        max-width: calc(100% - 10px);
+    }
+}
