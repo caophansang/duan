@@ -13,7 +13,7 @@
             <p class="sns-area__title">Hỗ Trợ</p>
             <ul class="">
               <li class="">
-                Phone hỗ trợ khách hàng:<br>010 3802 4584
+                Phone hỗ trợ khách hàng:<br>010 7932 9682
               </li>
               <li class="">
                 <a href="https://www.facebook.com/sang.caophan/" target="blank" class="help-area__link">FB: Cao Phan Sáng</a>
