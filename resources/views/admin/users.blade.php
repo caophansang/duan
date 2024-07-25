@@ -1,6 +1,16 @@
 @extends('admin/admin')
-<style type="text/css" >
+<style type="text/css">
   @media only screen and (max-width: 900px) {
+    .main-header{
+      position: fixed !important;
+      width: 100% !important;
+      top: 0 !important;
+      left: 0 !important;
+    }
+
+    .content-wrapper{
+      padding-top: 65px !important;
+    }
     .mobile_hiden {
       display: none;
     }
@@ -15,69 +25,86 @@
     }
 
     .mobile_button {
-      font-size: 14px !important;
+      font-size: 16px !important;
       width: 104px !important;
     }
 
-    .mobile_th{
+    .mobile_th {
       padding: 3px !important;
       font-size: 14px !important;
       text-align: center !important;
       width: 50px !important;
     }
-    .table-responsive {
-  overflow-x: auto !important;
-}
 
-.table-responsive table {
-  width: 100% !important;
-  min-width: 350px !important; /* Adjust this value based on your content */
-}
+    .content-header{
+      padding: 6px .5rem !important;
+    }
+    .table-responsive {
+      overflow-x: auto !important;
+    }
+
+    .table-responsive table {
+      width: 100% !important;
+      min-width: 350px !important;
+      /* Adjust this value based on your content */
+    }
+
+    .modal-header {
+      padding: 5px 10px !important;
+    }
+
+    .modal-body {
+      padding: 5px 10px !important;
+    }
+
+    .form-group>img {
+      width: 50px !important;
+    }
   }
 </style>
 @section('content_header')
-<h2 class="mobile_title" >User Management</h2>
+<h2 class="mobile_title">User Management</h2>
 @stop
 
 @section('content')
 
 <div class="row">
   <div class="col-sm-12">
-    <button  type="button" style="width:150px; margin-bottom: 10px;" class="btn btn-block btn-primary mobile_button" data-toggle="modal" data-target="#create-user">
+    <button type="button" style="width:150px; margin-bottom: 10px;" class="btn btn-block btn-primary mobile_button" data-toggle="modal" data-target="#create-user">
       <i class="fas fa-plus"></i> Thêm user</button>
-  <div class="table-responsive">
-    <table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
-      <thead>
-        <tr role="row">
-          <th class="sorting_asc mobile_th" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 169px;">Ảnh</th>
-          <th class="sorting_asc mobile_th" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 169px;">Tên User</th>
-          <th class="sorting_asc mobile_th" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 169px;">Email</th>
-          <th class="sorting_asc mobile_hiden" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 169px;">SDT</th>
-          <th class="sorting_asc mobile_hiden" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 169px;">Facebook Link</th>
-          <th class="sorting_asc mobile_hiden" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 169px;">Địa chỉ</th>
-          <th class="sorting_asc mobile_th" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 50px;">Sửa</th>
-          <th class="sorting_asc mobile_th" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 50px;">Đổi mật khẩu</th>
-          <th class="sorting_asc mobile_th" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 50px;">Xóa</th>
-        </tr>
-      </thead>
+    <div class="table-responsive">
+      <table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+        <thead>
+          <tr role="row">
+            <th class="sorting_asc mobile_th" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 169px;">Ảnh</th>
+            <th class="sorting_asc mobile_th" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 169px;">Tên User</th>
+            <th class="sorting_asc mobile_th" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 169px;">Email</th>
+            <th class="sorting_asc mobile_hiden" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 169px;">SDT</th>
+            <th class="sorting_asc mobile_hiden" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 169px;">Facebook Link</th>
+            <th class="sorting_asc mobile_hiden" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 169px;">Địa chỉ</th>
+            <th class="sorting_asc mobile_th" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 50px;">Sửa</th>
+            <th class="sorting_asc mobile_th" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 50px;">Đổi mật khẩu</th>
+            <th class="sorting_asc mobile_th" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 50px;">Xóa</th>
+          </tr>
+        </thead>
 
-      <tbody>
-        @foreach($users as $user)
-        <tr role="row" class="odd" style="text-align:center;">
-          <td class="mobile_th" ><img class="mobile_img" style="height: 100px; width:100px;" src="{{ $user->profile_picture }}"></td>
-          <td class="mobile_th" style="vertical-align: inherit">{{ $user->name }}</td>
-          <td class="mobile_th" style="vertical-align: inherit">{{ $user->email }}</td>
-          <td class="mobile_hiden" style="vertical-align: inherit">{{ $user->phone_number }}</td>
-          <td class="mobile_hiden" style="vertical-align: inherit">{{ $user->facebook_link }}</td>
-          <td class="mobile_hiden" style="vertical-align: inherit">{{ $user->address }}</td>
-          <td class="mobile_th" style="vertical-align: inherit"><a href="#" data-toggle="modal" data-target="#modal-{{ $user->id }}"><i class="fas fa-edit"></i></a></td>
-          <td class="mobile_th" style="vertical-align: inherit"><a href="#" data-toggle="modal" data-target="#change-password-{{ $user->id }}"><i class="fas fa-edit"></i></a></td>
-          <td class="mobile_th" style="vertical-align: inherit"><a href="/delete_user/{{ $user->id }}"><i class="fas fa-trash"></i></a></td>
-        </tr>
-        @endforeach
-      </tbody>
-    </table>
-  </div>
+        <tbody>
+          @foreach($users as $user)
+          <tr role="row" class="odd" style="text-align:center;">
+            <td class="mobile_th"><img class="mobile_img" style="height: 100px; width:100px;" src="{{ $user->profile_picture }}"></td>
+            <td class="mobile_th" style="vertical-align: inherit">{{ $user->name }}</td>
+            <td class="mobile_th" style="vertical-align: inherit">{{ $user->email }}</td>
+            <td class="mobile_hiden" style="vertical-align: inherit">{{ $user->phone_number }}</td>
+            <td class="mobile_hiden" style="vertical-align: inherit">{{ $user->facebook_link }}</td>
+            <td class="mobile_hiden" style="vertical-align: inherit">{{ $user->address }}</td>
+            <td class="mobile_th" style="vertical-align: inherit"><a href="#" data-toggle="modal" data-target="#modal-{{ $user->id }}"><i class="fas fa-edit"></i></a></td>
+            <td class="mobile_th" style="vertical-align: inherit"><a href="#" data-toggle="modal" data-target="#change-password-{{ $user->id }}"><i class="fas fa-edit"></i></a></td>
+            <td class="mobile_th" style="vertical-align: inherit"><a href="/delete_user/{{ $user->id }}"><i class="fas fa-trash"></i></a></td>
+          </tr>
+          @endforeach
+        </tbody>
+      </table>
+    </div>
     {{ $users->links() }}
 
 
@@ -199,7 +226,7 @@
                 <input type="text" name="address_edit" class="form-control" value="{{ old('address_edit', $user->address) }}">
                 <label for="Product Name">Hỉnh ảnh của User</label>
                 <br>
-                <input type="file" attrId="{{ $user->id }}" id="edit-avatar-{{ $user->id }}"  class="form-control edit-avatar" name="photo" />
+                <input type="file" attrId="{{ $user->id }}" id="edit-avatar-{{ $user->id }}" class="form-control edit-avatar" name="photo" />
                 @error('photo')
                 <div>
                   <b class="text-danger">{{ $message }}</b>
@@ -277,7 +304,7 @@
   if (window.location.search.includes('change-password')) {
     $(`#change-password-${window.location.search.split('=')[1]}`).modal('show');
   }
-  
+
   @endif
 
   function readURL(input, target, id = null) {

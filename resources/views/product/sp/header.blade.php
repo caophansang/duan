@@ -26,6 +26,7 @@
                 </div>
               </button>
               <div class="dropdown-content">
+              <a href="{{ route('admin-products-list') }}" id="modalBtn1"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbspQuản lý bán hàng</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                   @csrf
                   <a  onclick="event.preventDefault();
@@ -38,7 +39,7 @@
         @else
           <li class="header-nav__list-item">
             <div class="header-nav__link js-search-button">
-                <a href="{{ url('/auth/redirect/facebook') }}" class="btn btn-primary">
+                <a href="{{ url('/login') }}" class="btn btn-primary">
                   <div class="login-button">&nbsp&nbsp
                       <i class="fab fa-facebook"></i>
                       <span class="login-text">&nbspĐăng nhập</span>
