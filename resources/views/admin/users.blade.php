@@ -7,7 +7,6 @@
       top: 0 !important;
       left: 0 !important;
     }
-
     .content-wrapper{
       padding-top: 65px !important;
     }
@@ -21,19 +20,19 @@
     }
 
     .mobile_title {
-      font-size: 14px !important;
+      font-size: 16px !important;
     }
 
     .mobile_button {
-      font-size: 16px !important;
-      width: 104px !important;
+      font-size: 14px !important;
+      width: 150px !important;
     }
 
     .mobile_th {
       padding: 3px !important;
       font-size: 14px !important;
       text-align: center !important;
-      width: 50px !important;
+      min-width: 100px !important;
     }
 
     .content-header{
